@@ -14,6 +14,9 @@ class Testcategories extends CI_Controller
         echo "<br><br>first();<br>";
         print_r($this->categories->first());
 
+        echo "<br><br>getByName('sofa');<br>";
+        print_r($this->categories->getByName("sofa"));
+
         echo "<br><br>get(1);<br>";
         print_r($this->categories->get(1));
 
