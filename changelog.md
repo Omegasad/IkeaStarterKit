@@ -7,3 +7,5 @@ Team membership:
 - Elisa Chu
 
 Team conventions: Allman notation, markdown for changelog
+
+- Linked views together and moved the information to the catalog page
