@@ -26,7 +26,6 @@ class Info extends CI_Controller
      */
     public function category($key = null)
     {
-        $this->load->model('categories');
         $output = ($key == null) ? $this->categories->all() : $this->categories->getByName($key);
         header("Content-type: application/json");
         echo json_encode($output);
@@ -35,14 +34,20 @@ class Info extends CI_Controller
     /**
      * return the designated accessory, or all of them if none is specifically requested
      */
-    public function catalog($key)
+    public function catalog($key = null)
     {
+        $output = ($key == null) ? $this->accessories->all() : $this->accessories->getByName($key);
+        header("Content-type: application/json");
+        echo json_encode($output);
     }
 
     /**
-     * return the designated category, or all of them if none is specifically requested
+     * return the designated set, or all of them if none is specifically requested
      */
-    public function bundle($key)
+    public function bundle($key = null)
     {
+        $output = ($key == null) ? $this->sets->all() : $this->sets->getByName($key);
+        header("Content-type: application/json");
+        echo json_encode($output);
     }
 }
