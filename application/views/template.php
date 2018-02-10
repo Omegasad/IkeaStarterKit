@@ -10,7 +10,6 @@
 	<body>
         <div id="container">
 			{content}
-			<p class="footer"> This is the main page </p>
         </div>
 	</body>
 </html>
