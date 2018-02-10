@@ -1,20 +1,18 @@
-<h1>
-<div id="nav">
-<a href="/"> Home </a>
-<a href="/catalog"> Catalog </a>
-<a href="/info"> Info </a>
-</div>
-</h1>
-
 <div id="row">
     {datasets}
     <div class="span1">
-    <a href="/selectset/{setid}">SetID: {setid}</a><br />
-    SetName: {setname}<br />
-    SofaID: {sofaid}<br />
-    TableID: {tableid}<br />
-    LampID: {lampid}<br />
-    PaintingID: {paintingid}<br /><br /><br />
+    itemid: {itemid}<br />
+    itemname: {itemname}<br />
+    categoryid: {categoryid}<br />
+    itemcategory: {itemcategory}<br />
+    itemlength: {itemlength}<br />
+    itemwidth: {itemwidth}<br />
+    itemheight: {itemheight}<br />
+    itemweight: {itemweight}<br />
+    itemprice: {itemprice}<br />
+    itemvolume: {itemvolume}<br />
+    filename: {filename}<br />
+    filepath: {filepath}<br /><br /><br />
     </div>
     {/datasets}
 </div>
