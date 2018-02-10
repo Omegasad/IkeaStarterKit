@@ -5,7 +5,10 @@
     sofaid: {sofaid}<br />
     tableid: {tableid}<br />
     lampid: {lampid}<br />
-    paintingid: {paintingid}<br /><br /><br />
+    paintingid: {paintingid}<br />
+    totalvolume: {totalvolume}<br />
+    totalweight: {totalweight}<br />
+    totalcost: {totalcost}<br /><br /><br />
     </div>
 </div>
 

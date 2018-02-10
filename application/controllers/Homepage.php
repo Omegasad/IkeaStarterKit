@@ -37,6 +37,16 @@ class Homepage extends Application
 			$this->accessories->get($setmetadata->paintingid)
 			);
 
+		$this->data['totalvolume'] = 0.0;
+		$this->data['totalweight'] = 0.0;
+		$this->data['totalcost'] = 0.0;
+		foreach ($this->data['setdata'] as $accessoryitem)
+		{
+			$this->data['totalvolume'] += $accessoryitem->itemvolume;
+			$this->data['totalweight'] += $accessoryitem->itemweight;
+			$this->data['totalcost'] += $accessoryitem->itemprice;
+		}
+
 		$this->render();
 	}
 }
