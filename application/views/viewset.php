@@ -14,6 +14,7 @@
 
 <div id="row">
     {setdata}
+	<img src={filepath} >
     <div class="span1">
     itemid: {itemid}<br />
     itemname: {itemname}<br />
