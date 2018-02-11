@@ -3,14 +3,14 @@
         <div width =800px style="position:relative; left:0; top:0">
         <img src= {bgfile} width =800px style="position:relative;
              left:0; top:0"/> 
-        <img src= {paintingfile} width =200px style="position:absolute;
+        <img src= {paintingfile} width=40% height=40% style="position:absolute;
              top:40px; left:180px;">
-        <img src= {sofafile} width= 380px style="position:absolute;
-             top:235px; left:300px;"/>
-        <img src= {tablefile} width =280px style="position:absolute;
-             top:300px; left:120px;"/>     
-         <img src= {lampfile} width =50px style="position:absolute;
-             top:270px; left:50px;">        
+        <img src= {sofafile} width=55% height=55% style="position:absolute;
+             top:200px; left:350px;"/>
+        <img src= {tablefile} width=35% height=35% style="position:absolute;
+             top:300px; left:225px;"/>     
+         <img src= {lampfile} width =75px style="position:absolute;
+             top:200px; left:50px;">        
 
         </div>
         <div >
@@ -19,25 +19,21 @@
         <select name="selectset" style="position:relative"
                 onChange="this.form.submit()">
        
-         {chooseset}
-        <option id={setid} value={setid} {default}>{setname}</option>
+        {chooseset}
+        <option id={setid} value={setid} {default}>{setfullname}</option>
         {/chooseset}
 
         </select>
         </form>
-            <div id="row">
-            <div class="span1">
-            setid: {setid}<br />
-            setname: {setname}<br />
-            sofaid: {sofaid}<br />
-            tableid: {tableid}<br />
-            lampid: {lampid}<br />
-            paintingid: {paintingid}<br />
-            totalvolume: {totalvolume}<br />
-            totalweight: {totalweight}<br />
-            totalcost: {totalcost}<br /><br /><br />
+            <div class="viewdata">
+            Set ID: {setid}<br />
+            Set Name: {setfullname}<br />
+            Sofa ID: {sofaid} | Table ID: {tableid} <br />
+            Lamp ID: {lampid} | Painting ID: {paintingid} <br />
+            Total Volume: {totalvolume} cubic centimetres<br />
+            Total Weight: {totalweight} kg<br />
+            Total Cost: ${totalcost}<br /><br /><br />
             </div>
-        </div>
         </div>
     </div>
     
