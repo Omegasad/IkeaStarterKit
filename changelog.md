@@ -10,7 +10,7 @@ Team conventions: Allman notation, markdown for changelog
 
 - Linked views together and moved the information to the catalog page
 
----Version 1.7--- Release Date: Feb 10 2018
+---Version 1.7--- Release Date: Feb 11 2018
 Did some cleanup to the files and data representation in views (Tony So)
 
 ---Version 1.6--- Release Date: Feb 10 2018
