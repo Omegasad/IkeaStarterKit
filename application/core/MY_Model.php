@@ -2,6 +2,7 @@
 // pull in the interface we are supposed to implement
 // Note that it doesn't have to follow the normal CodeIgniter naming rules!
 require_once 'DataMapper.php';
+require_once 'Entity.php';
 
 /**
  * Generic data access model, for an RDB.
@@ -12,7 +13,7 @@ require_once 'DataMapper.php';
  * @copyright           Copyright (c) 2010-2017, James L. Parry
  * ------------------------------------------------------------------------
  */
-class MY_Model extends CI_Model implements DataMapper
+class MY_Model extends Entity implements DataMapper
 {
 
 	protected $_tableName;   // Which table is this a model for?
@@ -255,7 +256,7 @@ class MY_Model2 extends MY_Model
 //  Record-oriented functions
 //---------------------------------------------------------------------------
 	// Retrieve an existing DB record as an object
-	function get($key1, $key2)
+	function get($key1, $key2 = null)
 	{
 		$this->db->where($this->_keyField, $key1);
 		$this->db->where($this->_keyField2, $key2);
@@ -286,7 +287,7 @@ class MY_Model2 extends MY_Model
 	}
 
 	// Delete a record from the DB
-	function delete($key1, $key2)
+	function delete($key1, $key2 = null)
 	{
 		$this->db->where($this->_keyField, $key1);
 		$this->db->where($this->_keyField2, $key2);
@@ -294,7 +295,7 @@ class MY_Model2 extends MY_Model
 	}
 
 	// Determine if a key exists
-	function exists($key1, $key2)
+	function exists($key1, $key2 = null)
 	{
 		$this->db->where($this->_keyField, $key1);
 		$this->db->where($this->_keyField2, $key2);
@@ -356,7 +357,7 @@ class MY_Model2 extends MY_Model
 // Include any other persistence implementations, so that they can be used
 // as base models for any in a webapp.
 
-include_once 'Entity.php';  // provide for our entity
-include_once 'RDB_Model.php';	// backed by an RDB
+include_once 'RDB_Model.php';		// backed by an RDB
 include_once 'Memory_Model.php';	// In-memory only
-include_once 'CSV_Model.php';	// CSV persisted
+include_once 'CSV_Model.php';		// CSV persisted
+include_once 'XML_Model.php';		// XML persisted
