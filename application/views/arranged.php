@@ -3,7 +3,7 @@
         <div width =800px style="position:relative; left:0; top:0">
         <img src= {bgfile} width =800px style="position:relative;
              left:0; top:0"/> 
-        <img src= {paintingfile} width=40% height=40% style="position:absolute;
+        <img src= {paintingfile} width=40% style="position:absolute;
              top:40px; left:180px;">
         <img src= {sofafile} width=55% height=55% style="position:absolute;
              top:200px; left:350px;"/>
