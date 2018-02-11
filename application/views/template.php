@@ -8,10 +8,15 @@
         <link rel="stylesheet" type="text/css" href="/assets/css/default.css"/>
     </head>
     <body>
-    <div id="nav">
-        <a href="/">Home</a>
-        <a href="/catalog">Catalog</a>
+	
+    <div class="nav" id="nav">
+		<ul>
+			<li> <a href="/">Home</a> </li>
+			<li> <a href="/catalog">Catalog</a> </li>
+			<li> <a href="/info"> Info </a> </li>
+		</ul>
     </div>
+	
     <div id="container">{content}</div>
     </body>
 </html>

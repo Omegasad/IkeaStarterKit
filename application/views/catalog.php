@@ -1,18 +1,16 @@
 <div id="row">
     {datasets}
-    <div class="span1">
-    itemid: {itemid}<br />
-    itemname: {itemname}<br />
-    categoryid: {categoryid}<br />
-    itemcategory: {itemcategory}<br />
-    itemlength: {itemlength}<br />
-    itemwidth: {itemwidth}<br />
-    itemheight: {itemheight}<br />
-    itemweight: {itemweight}<br />
-    itemprice: {itemprice}<br />
-    itemvolume: {itemvolume}<br />
-    filename: {filename}<br />
-    filepath: {filepath}<br /><br /><br />
+	<h1> {itemname} </h1> <br />
+    <div class="catalog">
+	
+    Width: {itemwidth} cm<br />
+    Height: {itemheight} cm<br />
+	Length: {itemlength} cm<br />
+    Weight: {itemweight} kg<br />
+    Price: ${itemprice}<br />
+	
     </div>
+	
+		<img src={filepath} > <br />
     {/datasets}
 </div>
