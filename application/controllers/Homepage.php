@@ -75,12 +75,18 @@ class Homepage extends Application
                 $this->render();
 	}
 
+	/**
+	 * View a specific set.
+	 */
 	public function selectset($setid)
 	{
+		$this->data['pagebody'] = 'viewset';
+
+		// set meta data
 		$setmetadata = $this->sets->get($setid);
 		$this->data = array_merge($this->data, (array) $setmetadata);
 
-		$this->data['pagebody'] = 'viewset';
+		// get accessory item data per category
 		$this->data['setdata'] = array(
 			$this->accessories->get($setmetadata->sofaid),
 			$this->accessories->get($setmetadata->tableid),
@@ -88,6 +94,7 @@ class Homepage extends Application
 			$this->accessories->get($setmetadata->paintingid)
 			);
 
+		// calculate overall attributes
 		$this->data['totalvolume'] = 0.0;
 		$this->data['totalweight'] = 0.0;
 		$this->data['totalcost'] = 0.0;
@@ -98,6 +105,7 @@ class Homepage extends Application
 			$this->data['totalcost'] += $accessoryitem->itemprice;
 		}
 
+		// render view
 		$this->render();
 	}
 }
