@@ -25,7 +25,7 @@ class Homepage extends Application
             $this->data['chooseset'] = $this->sets->all();
             $this->data['bgfile'] = '/assets/img/background.png';
             if($id == null) {
-               $setmetadata = $this->sets->get(0); 
+                $setmetadata = $this->sets->get(0); 
             } else {
                 $setmetadata = $this->sets->get($id);
             }
@@ -62,7 +62,16 @@ class Homepage extends Application
 			$this->data['totalcost'] += $accessoryitem->itemprice;
 		}
                 $this->data['selectedid'] = $id;
-           
+                
+        
+        for ($i = 0; $i < sizeof($this->data['chooseset']); ++$i)
+        {
+            $this->data['chooseset'][$i]->default =
+                ($this->data['chooseset'][$i]->setid == $id)
+                    ? "selected"
+                    : "";
+        }
+                
                 $this->render();
 	}
 
