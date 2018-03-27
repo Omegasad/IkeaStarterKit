@@ -8,6 +8,9 @@ Team membership:
 
 Team conventions: Allman notation, markdown for changelog
 
+---Version 1.8--- Release Date: Mar 27 2018
+- Added basic testing usage and entity (Tony So)
+
 ---Version 1.7--- Release Date: Feb 11 2018
 - Readjusted some values made in the main page (Tony So)
 - Did some cleanup to the files and data representation in views (Tony So)
