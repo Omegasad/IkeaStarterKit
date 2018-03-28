@@ -19,8 +19,13 @@ class Homepage extends Application
 	 */
 	public function index()
 	{
-            $id = $this->input->post('selectset');
-            
+	    $id = $this->input->post('selectset');
+	    $role = $this->session->userdata('userrole');
+
+	    if ($role == NULL)
+	    	redirect("./roles/actor/Guest");
+
+	    $this->data['userrole'] = $role;
             $this->data['pagebody'] = 'arranged';
             $this->data['chooseset'] = $this->sets->all();
             $this->data['bgfile'] = '/assets/img/background.png';

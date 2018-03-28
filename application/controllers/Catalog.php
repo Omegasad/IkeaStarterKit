@@ -10,6 +10,12 @@ class Catalog extends Application
 	 */
 	public function index()
 	{
+	    $role = $this->session->userdata('userrole');
+
+	    if ($role == NULL)
+	    	redirect("./roles/actor/Guest");
+
+	    $this->data['userrole'] = $role;
 		$this->data['pagebody'] = 'catalog';
 		$this->data['datasets'] = $this->accessories->all();
 		$this->render();
