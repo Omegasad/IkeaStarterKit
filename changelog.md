@@ -8,6 +8,9 @@ Team membership:
 
 Team conventions: Allman notation, markdown for changelog
 
+---Version 1.9--- Release Date: Mar 27, 2018
+- Added basic user roles (Mike Zhou)
+
 ---Version 1.8--- Release Date: Mar 27 2018
 - Added basic testing usage and entity (Tony So)
 

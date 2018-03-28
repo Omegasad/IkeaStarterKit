@@ -10,10 +10,18 @@
     <body>
 	
     <div class="nav" id="nav">
-		<ul>
+		<ul class="nav nav-pills">
 			<li> <a href="/">Home</a> </li>
 			<li> <a href="/catalog">Catalog</a> </li>
 			<li> <a href="/info"> Info </a> </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">User Role: {userrole}<b class="caret"></b></a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li><a href="/roles/actor/Guest">Guest</a></li>
+                    <li><a href="/roles/actor/User">User</a></li>
+                    <li><a href="/roles/actor/Admin">Admin</a></li>
+                </ul>
+            </li>
 		</ul>
     </div>
 	
