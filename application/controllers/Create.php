@@ -1,0 +1,160 @@
+<?php
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of Create
+ *
+ * @author E
+ */
+class Create extends Application {
+    
+    public function index()
+    {
+
+            $this->data['pagebody'] = 'create';
+            $this->data['chooseset'] = $this->sets->all();
+            $this->data['bgfile'] = '/assets/img/background.png';
+            $this->data['datasets'] = $this->accessories->all();
+            
+            $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
+            $this->data['tables'] = $this->accessories->getCategoryMembers(1);
+            $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
+            $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
+            $this->data['outputsofa'] = "sofa";
+            
+            $this->data['paintingvisible'] = 'hidden';
+            $this->data['tablevisible'] = 'hidden';
+            $this->data['lampvisible'] = 'hidden';
+            $this->data['sofavisible'] = 'hidden';
+
+        $this->render();
+    }
+    
+    public function createset()
+    {
+        $this->data['pagebody'] = 'setcreated';
+        $data = $this->input->post();
+        if($data){
+            $set = $this->sets->create();
+            $set->setid = $this->sets->highest() + 1;
+            $set->setname = "user_input";
+            $set->setfullname = "user input";
+            $set->sofaid = ($data['submitsofa'] != '{outputsofa}' ? $data['submitsofa'] : '');
+            $set->tableid = ($data['submittable'] != '{outputtable}' ? $data['submittable'] : '');
+            $set->lampid = ($data['submitlamp'] != '{outputlamp}' ? $data['submitlamp'] : '');
+            $set->paintingid = ($data['submitpainting']!= '{outputpainting}' ? $data['submitpainting'] : '');
+            $this->sets->add($set);
+        }
+        $this->render();
+    }
+    
+    public function selection()
+    {
+        $this->data['pagebody'] = 'create';
+        $data = $this->input->post();
+        
+        
+            $this->data['chooseset'] = $this->sets->all();
+            $this->data['bgfile'] = '/assets/img/background.png';
+            $this->data['datasets'] = $this->accessories->all();
+            
+            $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
+            $this->data['tables'] = $this->accessories->getCategoryMembers(1);
+            $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
+            $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
+        
+        if($data) {
+            if($data['selectsofa'] != null) {
+                $this->data['outputsofa'] = $data['selectsofa'];
+                $this->data['sofafile'] = $this->accessories->get($data['selectsofa'])
+                    ->filepath;
+                $this->data['sofavisible'] = '';
+                
+                for ($i = 0; $i < sizeof($this->data['sofas']); ++$i)
+                {
+                    $this->data['sofas'][$i]->default =
+                        ($this->data['sofas'][$i]->itemid == $data['selectsofa'])
+                            ? "selected"
+                            : "";
+                }
+            } else {
+                $this->data['sofavisible'] = 'hidden';
+            }
+            
+            if($data['selecttable'] != null) {
+                $this->data['outputtable'] = $data['selecttable'];
+                $this->data['tablefile'] = $this->accessories->get($data['selecttable'])
+                    ->filepath;
+                $this->data['tablevisible'] = '';
+                
+                //save selection
+                for ($i = 0; $i < sizeof($this->data['tables']); ++$i)
+                {
+                    $this->data['tables'][$i]->default =
+                        ($this->data['tables'][$i]->itemid == $data['selecttable'])
+                            ? "selected"
+                            : "";
+                }                
+            } else {
+                $this->data['tablevisible'] = 'hidden';
+            }
+            
+            if($data['selectlamp'] != null) {
+                $this->data['outputlamp'] = $data['selectlamp'];
+                $this->data['lampfile'] = $this->accessories->get($data['selectlamp'])
+                    ->filepath;
+                $this->data['lampvisible'] = '';
+                
+                //save selection
+                for ($i = 0; $i < sizeof($this->data['lamps']); ++$i)
+                {
+                    $this->data['lamps'][$i]->default =
+                        ($this->data['lamps'][$i]->itemid == $data['selectlamp'])
+                            ? "selected"
+                            : "";
+                }                
+            } else {
+                $this->data['lampvisible'] = 'hidden';
+            }
+            
+            if($data['selectpainting'] != null) {
+                $this->data['outputpainting'] = $data['selectpainting'];
+                $this->data['paintingfile'] = $this->accessories->get($data['selectpainting'])
+                    ->filepath;
+                $this->data['paintingvisible'] = '';
+                
+                //save selection
+                for ($i = 0; $i < sizeof($this->data['paintings']); ++$i)
+                {
+                    $this->data['paintings'][$i]->default =
+                        ($this->data['paintings'][$i]->itemid == $data['selectpainting'])
+                            ? "selected"
+                            : "";
+                }                
+            } else {
+                $this->data['paintingvisible'] = 'hidden';
+            }
+        }
+        
+//        if($this->input->post('submit')){
+//            //$first = $this->input->post('first');
+//            $set = $this->sets->create();
+//            $set->setid = $this->sets->highest() + 1;
+//            $set->setname = "user_input";
+//            $set->setfullname = "user input";
+//            $set->sofaid = $data['selectsofa'];
+//            $set->tableid = $data['selecttable'];
+//            $set->lampid = $data['selectlamp'];
+//            $set->paintingid = $data['selectpainting'];
+//            $this->sets->add($set);
+//        }
+
+        $this->render();
+    }
+
+}

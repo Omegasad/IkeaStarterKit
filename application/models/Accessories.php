@@ -41,5 +41,19 @@ class Accessories extends CSV_Model
         }
         return null;
     }
+    
+    public function getCategoryMembers($cat)
+    {
+        $list = array();
+        $everything = parent::all();
+        for ($i = 0; $i < sizeof($everything); ++$i)
+        {
+            if ($everything[$i]->categoryid == $cat)
+            {
+                $list[] = $everything[$i];
+            }
+        }
+        return $list; 
+    }
 	
 }
