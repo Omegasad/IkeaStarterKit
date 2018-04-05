@@ -20,7 +20,6 @@ class Homepage extends Application
     public function index()
     {
         $id = $this->input->post('selectset');
-
             $this->data['pagebody'] = 'arranged';
             $this->data['chooseset'] = $this->sets->all();
             $this->data['bgfile'] = '/assets/img/background.png';
