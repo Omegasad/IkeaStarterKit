@@ -1,3 +1,26 @@
+<script>
+    function check() {
+        var sofaelement = document.getElementById("submitsofa").value;
+        var tableelement = document.getElementById("submittable").value;
+        var paintingelement = document.getElementById("submitpainting").value;
+        var lampelement = document.getElementById("submitlamp").value;
+        var name = document.getElementById("submitname").value;
+        
+        if(isNaN(sofaelement) || isNaN(tableelement) || isNaN(paintingelement)
+                || isNaN(lampelement) || !name) {
+            //alert(sofaelement);
+            sofaelement.required = true;
+            tableelement.required = true;
+            paintingelement.required = true;
+            lampelement.required = true;
+            name.required = true;
+            document.getElementById("outputrequired").innerHTML = "Set is incomplete";
+        } else {
+            document.getElementById("createset").submit();
+        }
+    }
+</script>
+
 <div>
     <div style="width:800px; margin:0 auto">
         <div width =800px style="position:relative; left:0; top:0">
@@ -16,7 +39,8 @@
         <div >
         <form method="post" accept-charset="utf-8" 
               name="selection" action="/create/selection">
-            
+        
+        <br><label for="sofaname" style="display:block; font-size:16px">Sofa: </label>
         <select name="selectsofa" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -24,16 +48,17 @@
         <option id={itemid} value={itemid} {default}>{itemname}</option>
         {/sofas}
         </select>
-       
+        
+        <br><label for="tablename" style="display:block; font-size:16px">Table: </label>
         <select name="selecttable" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
-            
         {tables}
         <option id={itemid} value={itemid} {default}>{itemname}</option>
         {/tables}
         </select>
         
+        <br><label for="lampname" style="display:block; font-size:16px">Lamp: </label>
         <select name="selectlamp" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -42,6 +67,7 @@
         {/lamps}
         </select>
         
+        <br><label for="paintingname" style="display:block; font-size:16px">Painting: </label>
         <select name="selectpainting" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -52,13 +78,18 @@
             
         </form>
         <form method="post" accept-charset="utf-8" 
-              name="createset" action="/create/createset">  
-        <input name="submitsofa" type="hidden" value={outputsofa} />
-        <input name="submittable" type="hidden" value={outputtable} />
-        <input name="submitlamp" type="hidden" value={outputlamp} />
-        <input name="submitpainting" type="hidden" value={outputpainting} />        
-        <input name="submit"type="submit" onclick="this.form.submit()" value="Create Set" >
+              name="createset" action="/create/createset" id="createset">  
+        <label for="submitname" style="display:block; font-size:16px">Set Name: </label>
+        <input id="submitname" name="submitname" type="text"/>   
+        
+        <input id="submitsofa" name="submitsofa" type="hidden" value={outputsofa} />
+        <input id="submittable" name="submittable" type="hidden" value={outputtable} />
+        <input id="submitlamp" name="submitlamp" type="hidden" value={outputlamp} />
+        <input id="submitpainting" name="submitpainting" type="hidden" value={outputpainting} />   
+        <p id="outputrequired"></p>
+<!--        <input name="submit"type="submit" onclick="check()" value="Create Set" >-->
         </form>
+            <button onclick="check()"> Create Set </button>
             outputsofa: {outputsofa}<br />
             outputtable: {outputtable}<br />
             <div class="viewdata">

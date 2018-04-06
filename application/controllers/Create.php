@@ -25,7 +25,7 @@ class Create extends Application {
             $this->data['tables'] = $this->accessories->getCategoryMembers(1);
             $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
             $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
-            $this->data['outputsofa'] = "sofa";
+            //$this->data['outputsofa'] = "sofa";
             
             $this->data['paintingvisible'] = 'hidden';
             $this->data['tablevisible'] = 'hidden';
@@ -42,13 +42,13 @@ class Create extends Application {
         if($data){
             $set = $this->sets->create();
             $set->setid = $this->sets->highest() + 1;
-            $set->setname = "user_input";
-            $set->setfullname = "user input";
+            $set->setname = $data['submitname'];
+            $set->setfullname = $data['submitname'];
             $set->sofaid = ($data['submitsofa'] != '{outputsofa}' ? $data['submitsofa'] : '');
             $set->tableid = ($data['submittable'] != '{outputtable}' ? $data['submittable'] : '');
             $set->lampid = ($data['submitlamp'] != '{outputlamp}' ? $data['submitlamp'] : '');
             $set->paintingid = ($data['submitpainting']!= '{outputpainting}' ? $data['submitpainting'] : '');
-            $this->sets->add($set);
+            $this->sets->add($set);  
         }
         $this->render();
     }
@@ -140,19 +140,6 @@ class Create extends Application {
                 $this->data['paintingvisible'] = 'hidden';
             }
         }
-        
-//        if($this->input->post('submit')){
-//            //$first = $this->input->post('first');
-//            $set = $this->sets->create();
-//            $set->setid = $this->sets->highest() + 1;
-//            $set->setname = "user_input";
-//            $set->setfullname = "user input";
-//            $set->sofaid = $data['selectsofa'];
-//            $set->tableid = $data['selecttable'];
-//            $set->lampid = $data['selectlamp'];
-//            $set->paintingid = $data['selectpainting'];
-//            $this->sets->add($set);
-//        }
 
         $this->render();
     }

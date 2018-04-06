@@ -1,0 +1,20 @@
+
+
+Code Coverage Report:       
+  2018-04-06 02:14:59       
+                            
+ Summary:                   
+  Classes:  0.00% (0/134)   
+  Methods:  0.26% (4/1540)  
+  Lines:    0.20% (47/23474)
+
+@CodeIgniter.Libraries::CI_Controller
+  Methods:  50.00% ( 1/ 2)   Lines:  12.50% (  1/  8)
+@CodeIgniter.Libraries::CI_Input
+  Methods:   9.09% ( 2/22)   Lines:   5.47% ( 11/201)
+@CodeIgniter.Libraries::CI_Loader
+  Methods:   0.00% ( 0/29)   Lines:   6.23% ( 23/369)
+@CodeIgniter.Libraries::CI_Log
+  Methods:   0.00% ( 0/ 5)   Lines:   8.62% (  5/ 58)
+@CodeIgniter.Libraries::CI_Model
+  Methods:  50.00% ( 1/ 2)   Lines:  66.67% (  2/  3)
