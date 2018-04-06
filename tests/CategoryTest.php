@@ -45,7 +45,7 @@ class CategoryTest extends TestCase
 	
 	public function testInvalidCategoryName() 
 	{
-		$valid = 'Chairs';
+		$invalid = 'Chairs';
 		$this->expectException('InvalidArgumentException');
 		$this->item->groups = $invalid;
 	}
@@ -59,7 +59,7 @@ class CategoryTest extends TestCase
 	
 	public function testInvalidDirName()
 	{
-		$valid = 'fridge';
+		$invalid = 'fridge';
 		$this->expectException('InvalidArgumentException');
 		$this->item->groups = $invalid;
 	}
