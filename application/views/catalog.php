@@ -11,6 +11,6 @@
 	
     </div>
 	
-		<img src={filepath} width=25% height=25% > <br />
+    <img src={filepath} width=25% height=25% > <br />
     {/datasets}
 </div>

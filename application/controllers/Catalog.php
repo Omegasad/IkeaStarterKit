@@ -20,4 +20,9 @@ class Catalog extends Application
 		$this->data['datasets'] = $this->accessories->all();
 		$this->render();
 	}
+        
+        public function edititem() {
+            
+            
+        }
 }
