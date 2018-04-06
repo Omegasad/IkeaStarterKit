@@ -89,18 +89,7 @@
         <p id="outputrequired"></p>
 <!--        <input name="submit"type="submit" onclick="check()" value="Create Set" >-->
         </form>
-            <button onclick="check()"> Create Set </button>
-            outputsofa: {outputsofa}<br />
-            outputtable: {outputtable}<br />
-            <div class="viewdata">
-            Set ID: {setid}<br />
-            Set Name: {setfullname}<br />
-            Sofa ID: {sofaid} | Table ID: {tableid} <br />
-            Lamp ID: {lampid} | Painting ID: {paintingid} <br />
-            Total Volume: {totalvolume} cubic centimetres<br />
-            Total Weight: {totalweight} kg<br />
-            Total Cost: ${totalcost}<br /><br /><br />
-            </div>
+            <button onclick="check()" style="margin-bottom:30px"> Create Set </button>
         </div>
     </div>
     

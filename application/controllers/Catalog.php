@@ -18,6 +18,12 @@ class Catalog extends Application
 	    $this->data['userrole'] = $role;
 		$this->data['pagebody'] = 'catalog';
 		$this->data['datasets'] = $this->accessories->all();
+                
+            $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
+            $this->data['tables'] = $this->accessories->getCategoryMembers(1);
+            $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
+            $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
+                
 		$this->render();
 	}
         
