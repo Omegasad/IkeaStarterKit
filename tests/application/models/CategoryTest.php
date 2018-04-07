@@ -10,8 +10,8 @@ class CategoryTest extends TestCase
 	{
 	  // Load CI instance normally
       $this->CI = &get_instance();
-	  $this->CI->load->model('categories');
-	  $this->item = new Categories();
+	  $this->CI->load->model('categoriesentity');
+	  $this->item = new CategoriesEntity();
 	  $this->item->categoryid = 1;
 	}
 	
@@ -47,7 +47,7 @@ class CategoryTest extends TestCase
 	{
 		$invalid = 'Chairs';
 		$this->expectException('InvalidArgumentException');
-		$this->item->groups = $invalid;
+		$this->item->categoryname = $invalid;
 	}
 	
 	public function testValidDirName()
@@ -55,12 +55,5 @@ class CategoryTest extends TestCase
 		$valid = 'lamp';
 		$this->item->directoryname = $valid;
 		$this->assertEquals($valid,$this->item->directoryname);
-	}
-	
-	public function testInvalidDirName()
-	{
-		$invalid = 'fridge';
-		$this->expectException('InvalidArgumentException');
-		$this->item->groups = $invalid;
 	}
 } // end class

@@ -22,7 +22,7 @@ class CategoriesEntity extends Entity {
 		$allowed = ['Sofas','Coffee Tables','Floor Lamps','Wall Paintings'];
 		if (!in_array($value, $allowed))
 			throw new InvalidArgumentException('Invalid group selection');
-		$this->groups = $value;
+		$this->categoryname = $value;
 		return $this;
 	}
 	
@@ -30,7 +30,7 @@ class CategoriesEntity extends Entity {
 		$allowed = ['sofa','table','lamp','painting'];
 		if (!in_array($value, $allowed))
 			throw new InvalidArgumentException('Invalid group selection');
-		$this->groups = $value;
+		$this->directoryname = $value;
 		return $this;
 	}
 }
