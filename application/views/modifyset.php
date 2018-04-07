@@ -109,17 +109,7 @@
         <input id="submitpainting" name="submitpainting" type="hidden" value={outputpainting} />   
         <p id="outputrequired"></p>
         </form>
-        <button onclick="check()">Change Set </button>
-        
-        <div class="viewdata">
-            Set ID: {setid}<br />
-            Set Name: {setfullname}<br />
-            Sofa ID: {sofaid} | Table ID: {tableid} <br />
-            Lamp ID: {lampid} | Painting ID: {paintingid} <br />
-            Total Volume: {totalvolume} cubic centimetres<br />
-            Total Weight: {totalweight} kg<br />
-            Total Cost: ${totalcost}<br /><br /><br />
-        </div>
+            <button onclick="check()" style="margin-bottom:30px" >Change Set </button> </br> 
         </div>
     </div>
     
