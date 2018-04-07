@@ -10,8 +10,8 @@ class SetTest extends TestCase
 	{
 	  // Load CI instance normally
       $this->CI = &get_instance();
-	  $this->CI->load->model('sets');
-	  $this->item = new Sets();
+	  $this->CI->load->model('setsentity');
+	  $this->item = new SetsEntity();
 	  $this->item->setid = 1;
 	}
 	
@@ -33,7 +33,7 @@ class SetTest extends TestCase
 	{
 		$invalid = -1000;
 		$this->expectException('InvalidArgumentException');
-		$this->item->itemid = $invalid;
+		$this->item->setid = $invalid;
 	}
 	
 	public function testValidSetName()

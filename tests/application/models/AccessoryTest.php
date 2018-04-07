@@ -11,7 +11,7 @@ class AccessoryTest extends TestCase
 	  // Load CI instance normally
       $this->CI = &get_instance();
 	  $this->CI->load->model('accessoriesEntity');
-	  $this->item = new Accessories();
+	  $this->item = new AccessoriesEntity();
 	  $this->item->itemid = 1;
 	}
 	
@@ -43,7 +43,7 @@ class AccessoryTest extends TestCase
 	
 	function testValidCategoryId()
 	{
-		$valid = 0;
+		$valid = 3;
 		$this->item->categoryid = $valid;
 		$this->assertEquals($valid,$this->item->categoryid);
 	}

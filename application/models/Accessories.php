@@ -10,7 +10,12 @@ class Accessories extends CSV_Model
     {
         parent::__construct('../data/accessory.csv', 'itemid');
 
-        // Add derrived attributes to model
+
+    }
+	
+	function getEverything()
+	{
+		// Add derrived attributes to model
         $everything = parent::all();
         for ($i = 0; $i < sizeof($everything); ++$i)
         {
@@ -24,7 +29,7 @@ class Accessories extends CSV_Model
 
             $everything[$i]->itemcategory = $this->categories->get($everything[$i]->categoryid)->categoryname;
         }
-    }
+	}
 
     /**
      * Get accessory item by name.
