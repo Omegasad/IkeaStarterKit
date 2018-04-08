@@ -51,7 +51,6 @@ class Create extends Application {
             $set = $this->sets->create();
             $set->setid = $this->sets->highest() + 1;
             $set->setname = $data['submitname'];
-            $set->setfullname = $data['submitname'];
             $set->sofaid = ($data['submitsofa'] != '{outputsofa}' ? $data['submitsofa'] : '');
             $set->tableid = ($data['submittable'] != '{outputtable}' ? $data['submittable'] : '');
             $set->lampid = ($data['submitlamp'] != '{outputlamp}' ? $data['submitlamp'] : '');
