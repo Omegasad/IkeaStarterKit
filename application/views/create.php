@@ -40,7 +40,7 @@
         <form method="post" accept-charset="utf-8" 
               name="selection" action="/create/selection">
         
-        <br><label for="sofaname" style="display:block; font-size:16px">Sofa: </label>
+        <br><label for="sofaname" style="display:block; font-size:16px">{category0}: </label>
         <select name="selectsofa" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -49,7 +49,7 @@
         {/sofas}
         </select>
         
-        <br><label for="tablename" style="display:block; font-size:16px">Table: </label>
+        <br><label for="tablename" style="display:block; font-size:16px">{category1}: </label>
         <select name="selecttable" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -58,7 +58,7 @@
         {/tables}
         </select>
         
-        <br><label for="lampname" style="display:block; font-size:16px">Lamp: </label>
+        <br><label for="lampname" style="display:block; font-size:16px">{category2}: </label>
         <select name="selectlamp" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -67,7 +67,7 @@
         {/lamps}
         </select>
         
-        <br><label for="paintingname" style="display:block; font-size:16px">Painting: </label>
+        <br><label for="paintingname" style="display:block; font-size:16px">{category3}: </label>
         <select name="selectpainting" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
