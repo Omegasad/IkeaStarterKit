@@ -9,7 +9,7 @@ class Modifycategory extends Application
     
     public function index()
     {
-        $this->has_permissions_or_exit(ROLE_USER);
+        $this->has_permissions_or_exit(ROLE_ADMIN);
         
         $id = ($this->selectedcategory) 
                 ? $this->selectedcategory->categoryid
@@ -40,7 +40,7 @@ class Modifycategory extends Application
     
     public function modify()
     {
-        $this->has_permissions_or_exit(ROLE_USER);
+        $this->has_permissions_or_exit(ROLE_ADMIN);
         
         $data = $this->input->post();
         if($data){
