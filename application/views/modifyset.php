@@ -9,14 +9,14 @@
         
         if(isNaN(sofaelement) || isNaN(tableelement) || isNaN(paintingelement)
                 || isNaN(lampelement) || !name) {
-           // alert(sofaelement);
             sofaelement.required = true;
             tableelement.required = true;
             paintingelement.required = true;
             lampelement.required = true;
             name.required = true;
-            document.getElementById("outputrequired").innerHTML = "No Changes were Applied";
-        } else {
+            document.getElementById("outputrequired").innerHTML = "Set is incomplete";
+        } 
+        else {
             document.getElementById("createset").submit();
         }
     }
@@ -45,7 +45,7 @@
                 onChange="this.form.submit()">
         
         {chooseset}
-        <option id={setid} value={setid} {default}>{setfullname}</option>
+        <option id={setid} value={setid} {default}>{setname}</option>
         {/chooseset}
 
         </select>
@@ -56,7 +56,7 @@
         <form method="post" accept-charset="utf-8" 
               name="selection" action="/modifyset/selection">
         
-        <label style="display:block; font-size:16px" for="sofaname">{category0}: </label>    
+        <label style="display:block; font-size:16px" for="sofaname">Sofa: </label>    
         <select name="selectsofa" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -65,7 +65,7 @@
         {/sofas}
         </select>
         
-        </br><label style="display:block; font-size:16px" for="tablename">{category1}: </label>   
+        </br><label style="display:block; font-size:16px" for="tablename">Table: </label>   
         <select name="selecttable" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>  
@@ -74,7 +74,7 @@
         {/tables}
         </select>
         
-        <br><label style="display:block; font-size:16px" for="lampname">{category2}: </label> 
+        <br><label style="display:block; font-size:16px" for="lampname">Lamp: </label> 
         <select name="selectlamp" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -83,7 +83,7 @@
         {/lamps}
         </select>
         
-        <br><label style="display:block; font-size:16px" for="paintingname">{category3}: </label>   
+        <br><label style="display:block; font-size:16px" for="paintingname">Painting: </label>   
         <select name="selectpainting" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -93,15 +93,15 @@
         </select>
             
         <input id="submitname" name="submitname" type="hidden" 
-               type="text" value="{outputname}" />   
-        <input id="submitid" name="submitid" type="hidden" value="{outputsetid}" />
+               type="text" value={outputname} />   
+        <input id="submitid" name="submitid" type="hidden" value={outputsetid} />
         </form>
             
         <form method="post" accept-charset="utf-8" 
               name="modifyset" action="/modifyset/modify" id="createset">  
         <label for="submitname" style="display:block; font-size:16px">Set Name: </label>
         <input id="submitname2" name="submitname2" type="text" value="{outputname}" />   
-        <input id="submitid2" name="submitid" type="hidden" value="{outputsetid}" />
+        <input id="submitid2" name="submitid" type="hidden" value={outputsetid} />
 
         <input id="submitsofa" name="submitsofa" type="hidden" value={outputsofa} />
         <input id="submittable" name="submittable" type="hidden" value={outputtable} />

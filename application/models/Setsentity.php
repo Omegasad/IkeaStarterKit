@@ -11,7 +11,6 @@ class SetsEntity extends Entity {
 	protected $tableid;
 	protected $lampid;
 	protected $paintingid;
-	protected $setfullname;
 	
 	function setSetId($value) {
 		if (!is_numeric($value))

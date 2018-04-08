@@ -20,14 +20,14 @@
                 onChange="this.form.submit()">
        
         {chooseset}
-        <option id={setid} value={setid} {default}>{setfullname}</option>
+        <option id={setid} value={setid} {default}>{setname}</option>
         {/chooseset}
 
         </select>
         </form>
             <div class="viewdata">
                 Set ID: {setid}<br />
-                Set Name: {setfullname}<br />
+                Set Name: {setname}<br />
                 {category0} ID: {sofaid} | {category1} ID: {tableid} <br />
                 {category2} ID: {lampid} | {category3} ID: {paintingid} <br />
                 <br>

@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Modifyset extends Application
+class ModifySet extends Application
 {
 
     /**
@@ -19,8 +19,6 @@ class Modifyset extends Application
      */
     public function index()
     {
-        $this->has_permissions_or_exit(ROLE_USER);
-
         $id = $this->input->post('selectset');
             $this->data['pagebody'] = 'modifyset';
             $this->data['chooseset'] = $this->sets->all();
@@ -37,15 +35,16 @@ class Modifyset extends Application
             $this->accessories->get($setmetadata->lampid),
             $this->accessories->get($setmetadata->paintingid)
             );
-            for ($i = 0; $i < 4; $i++) {
-                $key = 'category' . $i;
-                $this->data[$key] = $this->categories->get($i)->categoryname;
-            }
             
             $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
             $this->data['tables'] = $this->accessories->getCategoryMembers(1);
             $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
             $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
+            
+            $this->data['outputsofa'] = $setmetadata->sofaid;
+            $this->data['outputtable'] = $setmetadata->tableid;
+            $this->data['outputlamp'] = $setmetadata->lampid;
+            $this->data['outputpainting'] = $setmetadata->paintingid;
                 
                 $this->data['sofafile'] 
                         = $this->accessories->get($setmetadata->sofaid)
@@ -114,7 +113,7 @@ class Modifyset extends Application
                     : "";
         }
         
-        $this->data['outputname'] = $setmetadata->setfullname;
+        $this->data['outputname'] = $setmetadata->setname;
         $this->data['outputsetid'] = $setmetadata->setid;
        
         $this->render();
@@ -122,49 +121,35 @@ class Modifyset extends Application
     
         public function modify()
     {
-        $this->has_permissions_or_exit(ROLE_USER);
-
         $this->data['pagebody'] = 'setmodified';
         $data = $this->input->post();
         if($data){
             $set = $this->sets->create();
             $set->setid = $data['submitid'];
             $set->setname = $data['submitname2'];
-            $set->setfullname = $data['submitname2'];
             $set->sofaid = ($data['submitsofa'] != '{outputsofa}' ? $data['submitsofa'] : '');
             $set->tableid = ($data['submittable'] != '{outputtable}' ? $data['submittable'] : '');
             $set->lampid = ($data['submitlamp'] != '{outputlamp}' ? $data['submitlamp'] : '');
             $set->paintingid = ($data['submitpainting']!= '{outputpainting}' ? $data['submitpainting'] : '');
-          //  if($set->sofaid && $set->tableid && $set->lampid && $set->paintingid) {
-              $this->sets->update($set);  
-            //} else {
-            //    $this->data['pagebody'] = 'create';
-           // }
-//            $this->sets->add($set);
+            $this->sets->update($set);  
         }
         $this->render();
     }
     
     public function selection()
     {
-        $this->has_permissions_or_exit(ROLE_USER);
-
         $this->data['pagebody'] = 'modifyset';
         $data = $this->input->post();
-                
-        $this->data['chooseset'] = $this->sets->all();
-        $this->data['bgfile'] = '/assets/img/background.png';
-        $this->data['datasets'] = $this->accessories->all();
         
-        for ($i = 0; $i < 4; $i++) {
-                $key = 'category' . $i;
-                $this->data[$key] = $this->categories->get($i)->categoryname;
-            }
-
-        $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
-        $this->data['tables'] = $this->accessories->getCategoryMembers(1);
-        $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
-        $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
+        
+            $this->data['chooseset'] = $this->sets->all();
+            $this->data['bgfile'] = '/assets/img/background.png';
+            $this->data['datasets'] = $this->accessories->all();
+            
+            $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
+            $this->data['tables'] = $this->accessories->getCategoryMembers(1);
+            $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
+            $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
         
         if($data) {
             if($data['selectsofa'] != null) {
