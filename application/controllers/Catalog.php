@@ -19,6 +19,11 @@ class Catalog extends Application
 		$this->data['pagebody'] = 'catalog';
 		$this->data['datasets'] = $this->accessories->all();
                 
+            for ($i = 0; $i < 4; $i++) {
+                $key = 'category' . $i;
+                $this->data[$key] = $this->categories->get($i)->categoryname;
+            }
+                
             $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
             $this->data['tables'] = $this->accessories->getCategoryMembers(1);
             $this->data['lamps'] = $this->accessories->getCategoryMembers(2);

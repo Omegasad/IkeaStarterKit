@@ -1,69 +1,59 @@
-<div id="row" style="dislay:block">
-    <p style="font-size:30px;text-decoration: underline; text-decoration-color: blue">Sofas</p>
+<div id="row" class="category" style="dislay:block">
+    <p style="font-size:30px;text-decoration: underline; text-decoration-color: blue">{category0}</p>
     {sofas}
     <h1> {itemname} </h1> <br />
-    <div class="catalog">
-	
-        <p style="margin-left:15px">Width: {itemwidth} cm</p>
-        <p style="margin-left:15px">Height: {itemheight} cm</p>
-        <p style="margin-left:15px">Length: {itemlength} cm</p>
-        <p style="margin-left:15px">Weight: {itemweight} kg</p>
-        <p style="margin-left:15px">Price: ${itemprice}</p>
-	
-    </div>
-	
-    <img src={filepath} width=25% height=25% style="margin-left:15px"> <br />
+    <div class="item">
+        <p>Width: {itemwidth} cm</p>
+        <p>Height: {itemheight} cm</p>
+        <p>Length: {itemlength} cm</p>
+        <p>Weight: {itemweight} kg</p>
+        <p>Price: ${itemprice}</p>
+        <img src={filepath}> <br />
+    </div>	
     {/sofas}
 </div>
 
-<div id="row" style="dislay:block">
-    <p style="font-size:30px;text-decoration: underline; text-decoration-color: blue">Tables</p>
+<div id="row" class="category" style="dislay:block">
+    <p style="font-size:30px;text-decoration: underline; text-decoration-color: blue">{category1}</p>
     {tables}
-	<h1> {itemname} </h1> <br />
-    <div class="catalog">
-	
-        <p style="margin-left:15px">Width: {itemwidth} cm</p>
-        <p style="margin-left:15px">Height: {itemheight} cm</p>
-        <p style="margin-left:15px">Length: {itemlength} cm</p>
-        <p style="margin-left:15px">Weight: {itemweight} kg</p>
-        <p style="margin-left:15px">Price: ${itemprice}</p>
-    </div>
-	
-    <img src={filepath} width=25% height=25% style="margin-left:15px"> <br />
+    <h1> {itemname} </h1> <br />
+    <div class="item">
+        <p>Width: {itemwidth} cm</p>
+        <p>Height: {itemheight} cm</p>
+        <p>Length: {itemlength} cm</p>
+        <p>Weight: {itemweight} kg</p>
+        <p>Price: ${itemprice}</p>
+        <img src={filepath}> <br />
+    </div>	
     {/tables}
 </div>
 
-<div id="row" style="dislay:block" style="left:150px">
-    <p style="font-size:30px;text-decoration: underline; text-decoration-color: blue">Lamps</p>
+<div id="row" class="category" style="dislay:block" style="left:150px">
+    <p style="font-size:30px;text-decoration: underline; text-decoration-color: blue">{category2}</p>
     {lamps}
-	<h1> {itemname} </h1> <br />
-    <div class="catalog" style="left:150px">
-	
-        <p style="margin-left:15px">Width: {itemwidth} cm</p>
-        <p style="margin-left:15px">Height: {itemheight} cm</p>
-        <p style="margin-left:15px">Length: {itemlength} cm</p>
-        <p style="margin-left:15px">Weight: {itemweight} kg</p>
-        <p style="margin-left:15px">Price: ${itemprice}</p>
-	
-    </div>
-	
-    <img src={filepath} width=7% height=25% style="margin-left:15px"> <br />
+    <h1> {itemname} </h1> <br />
+    <div class="item">
+        <p>Width: {itemwidth} cm</p>
+        <p>Height: {itemheight} cm</p>
+        <p>Length: {itemlength} cm</p>
+        <p>Weight: {itemweight} kg</p>
+        <p>Price: ${itemprice}</p>
+        <img src={filepath}> <br />
+    </div>	
     {/lamps}
 </div>
 
-<div id="row" style="dislay:block">
-    <p style="font-size:30px;text-decoration: underline; text-decoration-color: blue">Paintings</p>
+<div id="row" class="category" style="dislay:block">
+    <p style="font-size:30px;text-decoration: underline; text-decoration-color: blue">{category3}</p>
     {paintings}
-	<h1> {itemname} </h1> <br />
-    <div class="catalog">
-	
-        <p style="margin-left:15px">Width: {itemwidth} cm</p>
-        <p style="margin-left:15px">Height: {itemheight} cm</p>
-        <p style="margin-left:15px">Length: {itemlength} cm</p>
-        <p style="margin-left:15px">Weight: {itemweight} kg</p>
-        <p style="margin-left:15px">Price: ${itemprice}</p>
+    <h1> {itemname} </h1> <br />
+    <div class="item">
+        <p>Width: {itemwidth} cm</p>
+        <p>Height: {itemheight} cm</p>
+        <p>Length: {itemlength} cm</p>
+        <p>Weight: {itemweight} kg</p>
+        <p>Price: ${itemprice}</p>
+        <img src={filepath}> <br />
     </div>
-	
-    <img src={filepath} width=25% height=25% style="margin-left:15px"> <br />
     {/paintings}
 </div>
