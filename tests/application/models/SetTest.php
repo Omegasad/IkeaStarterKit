@@ -45,6 +45,10 @@ class SetTest extends TestCase
 		$this->expectException('InvalidArgumentException');
 		$this->item->setid = $invalid;
 		
+		$invalid = null;
+		$this->expectException('InvalidArgumentException');
+		$this->item->setname = $invalid;
+		
 		$invalid = -1000;
 		$this->expectException('InvalidArgumentException');
 		$this->item->setid = $invalid;
@@ -68,6 +72,14 @@ class SetTest extends TestCase
 	
 	public function testInvalidSetName()
 	{
+		$invalid = 'abc';
+		$this->expectException('InvalidArgumentException');
+		$this->item->setname = $invalid;
+		
+		$invalid = null;
+		$this->expectException('InvalidArgumentException');
+		$this->item->setname = $invalid;
+		
 		$invalid = 'set_gg123';
 		$this->expectException('InvalidArgumentException');
 		$this->item->setname = $invalid;
@@ -98,6 +110,10 @@ class SetTest extends TestCase
 		$this->expectException('InvalidArgumentException');
 		$this->item->sofaid = $invalid;
 		
+		$invalid = null;
+		$this->expectException('InvalidArgumentException');
+		$this->item->sofaid = $invalid;
+		
 		$invalid = 9999;
 		$this->expectException('InvalidArgumentException');
 		$this->item->sofaid = $invalid;
@@ -117,6 +133,10 @@ class SetTest extends TestCase
 	public function testInvalidTableId()
 	{
 		$invalid = 'a';
+		$this->expectException('InvalidArgumentException');
+		$this->item->tableid = $invalid;
+		
+		$invalid = null;
 		$this->expectException('InvalidArgumentException');
 		$this->item->tableid = $invalid;
 		
@@ -142,6 +162,10 @@ class SetTest extends TestCase
 		$this->expectException('InvalidArgumentException');
 		$this->item->lampid = $invalid;
 		
+		$invalid = null;
+		$this->expectException('InvalidArgumentException');
+		$this->item->lampid = $invalid;
+		
 		$invalid = 0;
 		$this->expectException('InvalidArgumentException');
 		$this->item->lampid = $invalid;
@@ -161,6 +185,10 @@ class SetTest extends TestCase
 	public function testInvalidPaintingId()
 	{
 		$invalid = 'a';
+		$this->expectException('InvalidArgumentException');
+		$this->item->paintingid = $invalid;
+		
+		$invalid = null;
 		$this->expectException('InvalidArgumentException');
 		$this->item->paintingid = $invalid;
 		
@@ -189,6 +217,14 @@ class SetTest extends TestCase
 	public function testInvalidFullName()
 	{
 		$invalid = 0;
+		$this->expectException('InvalidArgumentException');
+		$this->item->setfullname = $invalid;
+		
+		$invalid = null;
+		$this->expectException('InvalidArgumentException');
+		$this->item->setfullname = $invalid;
+		
+		$invalid = 'abc';
 		$this->expectException('InvalidArgumentException');
 		$this->item->setfullname = $invalid;
 		
