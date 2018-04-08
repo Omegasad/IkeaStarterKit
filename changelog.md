@@ -8,11 +8,19 @@ Team membership:
 
 Team conventions: Allman notation, markdown for changelog
 
----Version 2.1--- Release Date: Apr 08, 2018
+---Version 2.2.1--- Release Date: Apr 08, 2018
+- Updated controllers and views for homepage and catalog to display category names dynamically (Johnny Lee)
+- Minor styling changes throughout site to improve consistency (Johnny Lee)
+
+---Version 2.2--- Release Date: Apr 08, 2018
 - Added admin modify category(name) feature (Johnny Lee)
 - Updated create and modifyset controllers and views to display category names dynamically (Johnny Lee)
 - Added even more test cases (Tony So)
 - Added roles permissions to create and modify set (Mike Zhou)
+
+---Version 2.1--- Release Date: Apr 08, 2018
+- Added admin modify category(name) feature (Johnny Lee)
+- Updated create and modifyset controllers and views to display category names dynamically (Johnny Lee)
 
 ---Version 2.0.1--- Release Date: Apr 07, 2018
 - Added travis CI build intergration and added more test cases (Tony So)

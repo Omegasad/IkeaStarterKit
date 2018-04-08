@@ -6,7 +6,7 @@
  * Using categories as an example, the URI /info/category would return all categories as a JSON document,
  * and /info/category/abc would return the data for just the one.
  */
-class Info extends CI_Controller
+class Info extends Application
 {
     function __construct()
     {
@@ -18,7 +18,8 @@ class Info extends CI_Controller
      */
     public function index()
     {
-        echo "How to accessorize a room.";
+        $this->data['pagebody'] = 'info';
+        $this->render();
     }
 
     /**
