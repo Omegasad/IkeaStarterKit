@@ -5,31 +5,27 @@
  */
 class Accessories extends CSV_Model
 {
+    private $CI; // use this to reference the CI instance
     // Constructor
     public function __construct()
     {
         parent::__construct('../data/accessory.csv', 'itemid');
-
-
-    }
-	
-	function getEverything()
-	{
-		// Add derrived attributes to model
+        $this->CI = &get_instance(); // retrieve the CI instance
+        // Add derrived attributes to model
         $everything = parent::all();
         for ($i = 0; $i < sizeof($everything); ++$i)
         {
             $everything[$i]->filepath = '/assets/img/'
-                . $this->categories->get($everything[$i]->categoryid)->dirname
+                . $this->CI->categories->get($everything[$i]->categoryid)->dirname
                 . '/' . $everything[$i]->filename;
 
             $everything[$i]->itemvolume = $everything[$i]->itemlength
                 * $everything[$i]->itemwidth
                 * $everything[$i]->itemheight;
 
-            $everything[$i]->itemcategory = $this->categories->get($everything[$i]->categoryid)->categoryname;
+            $everything[$i]->itemcategory = $this->CI->categories->get($everything[$i]->categoryid)->categoryname;
         }
-	}
+    }
 
     /**
      * Get accessory item by name.
