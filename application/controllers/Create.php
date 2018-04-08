@@ -22,6 +22,11 @@ class Create extends Application {
             $this->data['bgfile'] = '/assets/img/background.png';
             $this->data['datasets'] = $this->accessories->all();
             
+            for ($i = 0; $i < 4; $i++) {
+                $key = 'category' . $i;
+                $this->data[$key] = $this->categories->get($i)->categoryname;
+            }
+            
             $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
             $this->data['tables'] = $this->accessories->getCategoryMembers(1);
             $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
@@ -62,16 +67,20 @@ class Create extends Application {
 
         $this->data['pagebody'] = 'create';
         $data = $this->input->post();
+                
+        $this->data['chooseset'] = $this->sets->all();
+        $this->data['bgfile'] = '/assets/img/background.png';
+        $this->data['datasets'] = $this->accessories->all();
         
-        
-            $this->data['chooseset'] = $this->sets->all();
-            $this->data['bgfile'] = '/assets/img/background.png';
-            $this->data['datasets'] = $this->accessories->all();
-            
-            $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
-            $this->data['tables'] = $this->accessories->getCategoryMembers(1);
-            $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
-            $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
+        for ($i = 0; $i < 4; $i++) {
+                $key = 'category' . $i;
+                $this->data[$key] = $this->categories->get($i)->categoryname;
+            }
+
+        $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
+        $this->data['tables'] = $this->accessories->getCategoryMembers(1);
+        $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
+        $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
         
         if($data) {
             if($data['selectsofa'] != null) {
