@@ -3,7 +3,7 @@
 /**
  * Task entity class, with setter methods for each property.
  */
-class Setsentity extends Entity {
+class SetsEntity extends Entity {
 	
 	protected $setid;
 	protected $setname;
@@ -11,37 +11,47 @@ class Setsentity extends Entity {
 	protected $tableid;
 	protected $lampid;
 	protected $paintingid;
+	protected $setfullname;
 	
 	function setSetId($value) {
-		if (empty($value))
-			throw new InvalidArgumentException('An Id must have a value');
+		if (!is_numeric($value))
+			throw new InvalidArgumentException('Value must be in numbers');
 		else if ($value < 0) 
 			throw new InvalidArgumentException('Value must be greater than 0');
+		else if ($value > 26)
+			throw new InvalidArgumentException('Value must be lower than 26');
 		$this->setid = $value;
 		return $this;
 	}
 	
 	function setSetName($value) {
-		if(strlen($value) > 6)
-			throw new InvalidArgumentException('Task is more than 20 characters');
-		if (empty($value))
-			throw new InvalidArgumentException('Task cannot be empty');
+		if(strlen($value) > 5)
+			throw new InvalidArgumentException('Please enter a set name that contains the word set with 5 characters long');
+		else if (empty($value))
+			throw new InvalidArgumentException('Set name cannot be empty');
 		$this->setname = $value;
 		return $this;
 	}
 	
 	function setSofaId($value) {
-		if (empty($value))
-			throw new InvalidArgumentException('An Id must have a value');
+		
+		if (!is_numeric($value))
+			throw new InvalidArgumentException('Value must be in numbers');
 		else if ($value < 0) 
 			throw new InvalidArgumentException('Value must be greater than 0');
+		else if ($value > 26)
+			throw new InvalidArgumentException('Value must be lower than 26');
+		
 		$this->sofaid = $value;
 		return $this;
 	}
 	
 	function setTableId($value) {
-		if (empty($value))
-			throw new InvalidArgumentException('An Id must have a value');
+		
+		if (!is_numeric($value))
+			throw new InvalidArgumentException('Value must be in numbers');
+		else if (empty($value))
+			throw new InvalidArgumentException('TableID must contain a value');
 		else if ($value < 0) 
 			throw new InvalidArgumentException('Value must be greater than 0');
 		$this->tableid = $value;
@@ -49,8 +59,10 @@ class Setsentity extends Entity {
 	}
 	
 	function setLampId($value) {
-		if (empty($value))
-			throw new InvalidArgumentException('An Id must have a value');
+		if (!is_numeric($value))
+			throw new InvalidArgumentException('Value must be in numbers');
+		else if (empty($value))
+			throw new InvalidArgumentException('LampID must contain a value');
 		else if ($value < 0) 
 			throw new InvalidArgumentException('Value must be greater than 0');
 		$this->lampid = $value;
@@ -58,11 +70,21 @@ class Setsentity extends Entity {
 	}
 	
 	function setPaintingId($value) {
-		if (empty($value))
-			throw new InvalidArgumentException('An Id must have a value');
+		if (!is_numeric($value))
+			throw new InvalidArgumentException('Value must be in numbers');
+		else if (empty($value))
+			throw new InvalidArgumentException('PaintingID must contain a value');
 		else if ($value < 0) 
 			throw new InvalidArgumentException('Value must be greater than 0');
 		$this->paintingid = $value;
 		return $this;
+	}
+	
+	function setSetFullName ($value) {
+		if (empty($value))
+			throw new InvalidArgumentException('Set name cannot be empty');
+		else if(strlen($value) > 5)
+			throw new InvalidArgumentException('Please enter a set name that contains the word set with 5 characters long');
+		$this->setfullname = $value;
 	}
 }

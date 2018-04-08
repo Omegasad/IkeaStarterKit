@@ -47,7 +47,7 @@
 	
     </div>
 	
-    <img src={filepath} width=25% height=25% style="margin-left:15px"> <br />
+    <img src={filepath} width=7% height=25% style="margin-left:15px"> <br />
     {/lamps}
 </div>
 

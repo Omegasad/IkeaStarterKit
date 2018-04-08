@@ -24,7 +24,11 @@ class CategoryTest extends TestCase
 	
 	public function testValidCategoryId()
 	{
-		$valid = 300;
+		$valid = 0;
+		$this->item->categoryid = $valid;
+		$this->assertEquals($valid,$this->item->categoryid);
+		
+		$valid = 2;
 		$this->item->categoryid = $valid;
 		$this->assertEquals($valid,$this->item->categoryid);
 	}
@@ -34,11 +38,15 @@ class CategoryTest extends TestCase
 		$invalid = -500;
 		$this->expectException('InvalidArgumentException');
 		$this->item->categoryid= $invalid;
+
+		$invalid = 500;
+		$this->expectException('InvalidArgumentException');
+		$this->item->categoryid= $invalid;
 	}
 	
 	public function testValidCategoryName() 
 	{
-		$valid = 'Sofas';
+		$valid = 'Coffee Tables';
 		$this->item->categoryname = $valid;
 		$this->assertEquals($valid,$this->item->categoryname);
 	}
@@ -55,5 +63,12 @@ class CategoryTest extends TestCase
 		$valid = 'lamp';
 		$this->item->directoryname = $valid;
 		$this->assertEquals($valid,$this->item->directoryname);
+	}
+	
+	public function testInvalidDirName()
+	{
+		$invalid = 'tables';
+		$this->expectException('InvalidArgumentException');
+		$this->item->directoryname = $invalid;;
 	}
 } // end class
