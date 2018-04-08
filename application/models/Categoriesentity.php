@@ -3,17 +3,18 @@
 /**
  * Task entity class, with setter methods for each property.
  */
-class Categoriesentity extends Entity {
+class CategoriesEntity extends Entity {
 	
 	protected $categoryid;
 	protected $categoryname;
 	protected $directoryname;
 	
+	// Category ID starts from 0
 	function setCategoryId($value) {
-		if (empty($value))
-			throw new InvalidArgumentException('An Id must have a value');
-		else if ($value < 0) 
+		if ($value < 0) 
 			throw new InvalidArgumentException('Value must 0 or higher');
+		else if ($value > 3)
+			throw new InvalidArgumentException('Value must be lower than 3'); 
 		$this->categoryid = $value;
 		return $this;		
 	}
@@ -26,7 +27,7 @@ class Categoriesentity extends Entity {
 		return $this;
 	}
 	
-	function setDirName($value) {
+	function setDirectoryName($value) {
 		$allowed = ['sofa','table','lamp','painting'];
 		if (!in_array($value, $allowed))
 			throw new InvalidArgumentException('Invalid group selection');

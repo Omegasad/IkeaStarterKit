@@ -13,6 +13,7 @@ class SetTest extends TestCase
 	  $this->CI->load->model('setsentity');
 	  $this->item = new SetsEntity();
 	  $this->item->setid = 1;
+	  $this->item->sofaid = 1;
 	}
 	
 	public function testGetPost()
@@ -24,23 +25,45 @@ class SetTest extends TestCase
 	
 	public function testValidSetId()
 	{
-		$valid = 999;
+		
+		$valid = 0;
+		$this->item->setid = $valid;
+		$this->assertEquals($valid,$this->item->setid);
+		
+		$valid = 13;
+		$this->item->setid = $valid;
+		$this->assertEquals($valid,$this->item->setid);
+		
+		$valid = 26;
 		$this->item->setid = $valid;
 		$this->assertEquals($valid,$this->item->setid);
 	}
 	
 	public function testInvalidSetId()
 	{
+		$invalid = 'a';
+		$this->expectException('InvalidArgumentException');
+		$this->item->setid = $invalid;
+		
 		$invalid = -1000;
+		$this->expectException('InvalidArgumentException');
+		$this->item->setid = $invalid;
+		
+		$invalid = 30;
 		$this->expectException('InvalidArgumentException');
 		$this->item->setid = $invalid;
 	}
 	
 	public function testValidSetName()
 	{
-		$valid = 'set_g';
+		$containedValue = 'set_';
+		$valid = 'set_v';
 		$this->item->setname = $valid;
-		$this->assertEquals($valid,$this->item->setname);
+		$this->assertContains($containedValue,$this->item->setname);
+		
+		$valid = 'set_1';
+		$this->item->setname = $valid;
+		$this->assertContains($containedValue,$this->item->setname);
 	}
 	
 	public function testInvalidSetName()
@@ -48,17 +71,37 @@ class SetTest extends TestCase
 		$invalid = 'set_gg123';
 		$this->expectException('InvalidArgumentException');
 		$this->item->setname = $invalid;
+		
+		$invalid = 0;
+		$this->expectException('InvalidArgumentException');
+		$this->item->setname = $invalid;
 	}
 
 	public function testValidSofaId()
-	{
-		$valid = 999;
+	{		
+		$valid = 0;
+		$this->item->sofaid = $valid;
+		$this->assertEquals($valid,$this->item->sofaid);
+		
+		$valid = 13;
+		$this->item->sofaid = $valid;
+		$this->assertEquals($valid,$this->item->sofaid);
+		
+		$valid = 26;
 		$this->item->sofaid = $valid;
 		$this->assertEquals($valid,$this->item->sofaid);
 	}
 	
 	public function testInvalidSofaId()
 	{
+		$invalid = 'a';
+		$this->expectException('InvalidArgumentException');
+		$this->item->sofaid = $invalid;
+		
+		$invalid = 9999;
+		$this->expectException('InvalidArgumentException');
+		$this->item->sofaid = $invalid;
+		
 		$invalid = -1000;
 		$this->expectException('InvalidArgumentException');
 		$this->item->sofaid = $invalid;
@@ -73,6 +116,14 @@ class SetTest extends TestCase
 	
 	public function testInvalidTableId()
 	{
+		$invalid = 'a';
+		$this->expectException('InvalidArgumentException');
+		$this->item->tableid = $invalid;
+		
+		$invalid = 0;
+		$this->expectException('InvalidArgumentException');
+		$this->item->tableid = $invalid;
+		
 		$invalid = -1000;
 		$this->expectException('InvalidArgumentException');
 		$this->item->tableid = $invalid;
@@ -87,6 +138,14 @@ class SetTest extends TestCase
 	
 	public function testInvalidLampId()
 	{
+		$invalid = 'a';
+		$this->expectException('InvalidArgumentException');
+		$this->item->lampid = $invalid;
+		
+		$invalid = 0;
+		$this->expectException('InvalidArgumentException');
+		$this->item->lampid = $invalid;
+		
 		$invalid = -1000;
 		$this->expectException('InvalidArgumentException');
 		$this->item->lampid = $invalid;
@@ -101,9 +160,41 @@ class SetTest extends TestCase
 	
 	public function testInvalidPaintingId()
 	{
+		$invalid = 'a';
+		$this->expectException('InvalidArgumentException');
+		$this->item->paintingid = $invalid;
+		
+		$invalid = 0;
+		$this->expectException('InvalidArgumentException');
+		$this->item->paintingid = $invalid;
+		
 		$invalid = -1000;
 		$this->expectException('InvalidArgumentException');
 		$this->item->paintingid = $invalid;
+	}
+	
+	public function testValidFullName()
+	{
+		$containedValue = 'Set ';
+		
+		$valid = 'Set G';
+		$this->item->setfullname = $valid;
+		$this->assertContains($containedValue,$this->item->setfullname);
+		
+		$valid = 'Set 5';
+		$this->item->setfullname = $valid;
+		$this->assertContains($containedValue,$this->item->setfullname);
+	}
+	
+	public function testInvalidFullName()
+	{
+		$invalid = 0;
+		$this->expectException('InvalidArgumentException');
+		$this->item->setfullname = $invalid;
+		
+		$invalid = 'Set GG123';
+		$this->expectException('InvalidArgumentException');
+		$this->item->setfullname = $invalid;
 	}
 	
 } // end class

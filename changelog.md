@@ -8,12 +8,15 @@ Team membership:
 
 Team conventions: Allman notation, markdown for changelog
 
+
 ---Version 2.0.1--- Release Date: Apr 07, 2018
+- Added travis CI build intergration and added more test cases (Tony So)
 - Fixed unit tests by renaming case-sensitive files (Mike Zhou)
 
 ---Version 2.0--- Release Date: Apr 07, 2018
 - Fixed application context issue due to magic getter in Entity (Johnny Lee)
 - Added navigation links in view template (Johnny Lee)
+- Added more entity and test cases (Tony So)
 
 ---Version 1.9--- Release Date: Mar 27, 2018
 - Added basic user roles (Mike Zhou)
