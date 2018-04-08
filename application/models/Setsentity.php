@@ -24,17 +24,16 @@ class SetsEntity extends Entity {
 	}
 	
 	function setSetName($value) {
-		$containedWord = 'set_';
+		$containedWord = 'Set';
 		
-		if(strlen($value) > 5)
-			throw new InvalidArgumentException('Please enter a set name that contains the word set with 5 characters long');
-		else if (empty($value))
+		if (empty($value))
 			throw new InvalidArgumentException('Set name cannot be empty');
 		else if (strpos($value, $containedWord) === FALSE) 
-			throw new InvalidArgumentException('Word does not have the contained value: set_');
+			throw new InvalidArgumentException('Word does not have the contained value: Set');
+		else if(strlen($value) > 5)
+			throw new InvalidArgumentException('Please enter a set name that contains the word set with 5 characters long');
 		
 		$this->setname = $value;
-		return $this;
 	}
 	
 	function setSofaId($value) {
@@ -82,17 +81,5 @@ class SetsEntity extends Entity {
 			throw new InvalidArgumentException('Value must be greater than 0');
 		$this->paintingid = $value;
 		return $this;
-	}
-	
-	function setSetFullName ($value) {
-		$containedWord = 'Set';
-		
-		if (empty($value))
-			throw new InvalidArgumentException('Set name cannot be empty');
-		else if (strpos($value, $containedWord) === FALSE) 
-			throw new InvalidArgumentException('Word does not have the contained value: Set');
-		else if(strlen($value) > 5)
-			throw new InvalidArgumentException('Please enter a set name that contains the word set with 5 characters long');
-		$this->setfullname = $value;
 	}
 }

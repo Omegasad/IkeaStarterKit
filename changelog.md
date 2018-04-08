@@ -9,6 +9,9 @@ Team membership:
 Team conventions: Allman notation, markdown for changelog
 
 ---Version 2.2.1--- Release Date: Apr 08, 2018
+- Fixed user permissions in Modify Set and Modify Categories (Mike Zhou)
+- Applied minor changes in testing (Tony So)
+- Fixed modify set, removed setfullname (Elisa Chu)
 - Updated controllers and views for homepage and catalog to display category names dynamically (Johnny Lee)
 - Minor styling changes throughout site to improve consistency (Johnny Lee)
 
@@ -30,6 +33,7 @@ Team conventions: Allman notation, markdown for changelog
 - Fixed application context issue due to magic getter in Entity (Johnny Lee)
 - Added navigation links in view template (Johnny Lee)
 - Added more entity and test cases (Tony So)
+- Improved catalog (Elisa Chu)
 
 ---Version 1.9--- Release Date: Mar 27, 2018
 - Added magic getter and moved __construct to a new method (Tony So)
@@ -37,6 +41,7 @@ Team conventions: Allman notation, markdown for changelog
 
 ---Version 1.8--- Release Date: Mar 27 2018
 - Added basic testing usage and entity (Tony So)
+- Added set modification, improved set creation (Elisa Chu)
 
 ---Version 1.7--- Release Date: Feb 11 2018
 - Readjusted some values made in the main page (Tony So)

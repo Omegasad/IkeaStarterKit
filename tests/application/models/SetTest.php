@@ -60,19 +60,20 @@ class SetTest extends TestCase
 	
 	public function testValidSetName()
 	{
-		$containedValue = 'set_';
-		$valid = 'set_v';
+		$containedValue = 'Set ';
+		
+		$valid = 'Set G';
 		$this->item->setname = $valid;
 		$this->assertContains($containedValue,$this->item->setname);
 		
-		$valid = 'set_1';
+		$valid = 'Set 5';
 		$this->item->setname = $valid;
 		$this->assertContains($containedValue,$this->item->setname);
 	}
 	
 	public function testInvalidSetName()
-	{
-		$invalid = 'abc';
+	{		
+		$invalid = 0;
 		$this->expectException('InvalidArgumentException');
 		$this->item->setname = $invalid;
 		
@@ -80,11 +81,11 @@ class SetTest extends TestCase
 		$this->expectException('InvalidArgumentException');
 		$this->item->setname = $invalid;
 		
-		$invalid = 'set_gg123';
+		$invalid = 'abc';
 		$this->expectException('InvalidArgumentException');
 		$this->item->setname = $invalid;
 		
-		$invalid = 0;
+		$invalid = 'Set GG123';
 		$this->expectException('InvalidArgumentException');
 		$this->item->setname = $invalid;
 	}
@@ -199,38 +200,5 @@ class SetTest extends TestCase
 		$invalid = -1000;
 		$this->expectException('InvalidArgumentException');
 		$this->item->paintingid = $invalid;
-	}
-	
-	public function testValidFullName()
-	{
-		$containedValue = 'Set ';
-		
-		$valid = 'Set G';
-		$this->item->setfullname = $valid;
-		$this->assertContains($containedValue,$this->item->setfullname);
-		
-		$valid = 'Set 5';
-		$this->item->setfullname = $valid;
-		$this->assertContains($containedValue,$this->item->setfullname);
-	}
-	
-	public function testInvalidFullName()
-	{
-		$invalid = 0;
-		$this->expectException('InvalidArgumentException');
-		$this->item->setfullname = $invalid;
-		
-		$invalid = null;
-		$this->expectException('InvalidArgumentException');
-		$this->item->setfullname = $invalid;
-		
-		$invalid = 'abc';
-		$this->expectException('InvalidArgumentException');
-		$this->item->setfullname = $invalid;
-		
-		$invalid = 'Set GG123';
-		$this->expectException('InvalidArgumentException');
-		$this->item->setfullname = $invalid;
-	}
-	
+	}	
 } // end class
