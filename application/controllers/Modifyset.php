@@ -38,6 +38,11 @@ class ModifySet extends Application
             $this->accessories->get($setmetadata->paintingid)
             );
             
+            for ($i = 0; $i < 4; $i++) {
+                $key = 'category' . $i;
+                $this->data[$key] = $this->categories->get($i)->categoryname;
+            }
+            
             $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
             $this->data['tables'] = $this->accessories->getCategoryMembers(1);
             $this->data['lamps'] = $this->accessories->getCategoryMembers(2);

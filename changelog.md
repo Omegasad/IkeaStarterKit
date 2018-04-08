@@ -8,6 +8,10 @@ Team membership:
 
 Team conventions: Allman notation, markdown for changelog
 
+---Version 2.3--- Release Date: Apr 08, 2018
+- Added admin modify accessory feature (Johnny Lee)
+- Fixed dynamic category name display for modify set (Johnny Lee)
+
 ---Version 2.2.1--- Release Date: Apr 08, 2018
 - Fixed user permissions in Modify Set and Modify Categories (Mike Zhou)
 - Applied minor changes in testing (Tony So)

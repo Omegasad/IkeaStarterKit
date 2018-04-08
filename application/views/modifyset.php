@@ -56,7 +56,7 @@
         <form method="post" accept-charset="utf-8" 
               name="selection" action="/modifyset/selection">
         
-        <label style="display:block; font-size:16px" for="sofaname">Sofa: </label>    
+        <label style="display:block; font-size:16px" for="sofaname">{category0}: </label>    
         <select name="selectsofa" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -65,7 +65,7 @@
         {/sofas}
         </select>
         
-        </br><label style="display:block; font-size:16px" for="tablename">Table: </label>   
+        </br><label style="display:block; font-size:16px" for="tablename">{category1}: </label>   
         <select name="selecttable" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>  
@@ -74,7 +74,7 @@
         {/tables}
         </select>
         
-        <br><label style="display:block; font-size:16px" for="lampname">Lamp: </label> 
+        <br><label style="display:block; font-size:16px" for="lampname">{category2}: </label> 
         <select name="selectlamp" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
@@ -83,7 +83,7 @@
         {/lamps}
         </select>
         
-        <br><label style="display:block; font-size:16px" for="paintingname">Painting: </label>   
+        <br><label style="display:block; font-size:16px" for="paintingname">{category3}: </label>   
         <select name="selectpainting" style="position:relative"
                 onChange="this.form.submit()">
         <option id="blank"{default}></option>
