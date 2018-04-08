@@ -19,6 +19,8 @@ class Modifyset extends Application
      */
     public function index()
     {
+        $this->has_permissions_or_exit(ROLE_USER);
+
         $id = $this->input->post('selectset');
             $this->data['pagebody'] = 'modifyset';
             $this->data['chooseset'] = $this->sets->all();
@@ -116,6 +118,8 @@ class Modifyset extends Application
     
         public function modify()
     {
+        $this->has_permissions_or_exit(ROLE_USER);
+
         $this->data['pagebody'] = 'setmodified';
         $data = $this->input->post();
         if($data){
@@ -139,6 +143,8 @@ class Modifyset extends Application
     
     public function selection()
     {
+        $this->has_permissions_or_exit(ROLE_USER);
+
         $this->data['pagebody'] = 'modifyset';
         $data = $this->input->post();
         
