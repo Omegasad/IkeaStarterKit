@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ModifySet extends Application
+class Modifyset extends Application
 {
 
     /**

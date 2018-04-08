@@ -8,6 +8,9 @@ Team membership:
 
 Team conventions: Allman notation, markdown for changelog
 
+---Version 2.0.1--- Release Date: Apr 07, 2018
+- Fixed unit tests by renaming case-sensitive files (Mike Zhou)
+
 ---Version 2.0--- Release Date: Apr 07, 2018
 - Fixed application context issue due to magic getter in Entity (Johnny Lee)
 - Added navigation links in view template (Johnny Lee)

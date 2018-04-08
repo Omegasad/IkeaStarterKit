@@ -3,7 +3,7 @@
 /**
  * Task entity class, with setter methods for each property.
  */
-class SetsEntity extends Entity {
+class Setsentity extends Entity {
 	
 	protected $setid;
 	protected $setname;
