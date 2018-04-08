@@ -11,7 +11,9 @@ class CategoriesEntity extends Entity {
 	
 	// Category ID starts from 0
 	function setCategoryId($value) {
-		if ($value < 0) 
+		if (!is_numeric($value))
+			throw new InvalidArgumentException('Value must be in numbers');
+		else if ($value < 0) 
 			throw new InvalidArgumentException('Value must 0 or higher');
 		else if ($value > 3)
 			throw new InvalidArgumentException('Value must be lower than 3'); 
@@ -22,7 +24,7 @@ class CategoriesEntity extends Entity {
 	function setCategoryName($value) {
 		$allowed = ['Sofas','Coffee Tables','Floor Lamps','Wall Paintings'];
 		if (!in_array($value, $allowed))
-			throw new InvalidArgumentException('Invalid group selection');
+			throw new InvalidArgumentException('Select between Sofas, Coffee Tables. Floor Lamps and Wall paintings');
 		$this->categoryname = $value;
 		return $this;
 	}
@@ -30,7 +32,7 @@ class CategoriesEntity extends Entity {
 	function setDirectoryName($value) {
 		$allowed = ['sofa','table','lamp','painting'];
 		if (!in_array($value, $allowed))
-			throw new InvalidArgumentException('Invalid group selection');
+			throw new InvalidArgumentException('Select between sofa, table, lamp and painting');
 		$this->directoryname = $value;
 		return $this;
 	}

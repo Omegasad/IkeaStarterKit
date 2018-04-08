@@ -35,6 +35,14 @@ class CategoryTest extends TestCase
 	
 	public function testInvalidCategoryId()
 	{
+		$invalid = 'a';
+		$this->expectException('InvalidArgumentException');
+		$this->item->categoryid= $invalid;
+		
+		$invalid = '500';
+		$this->expectException('InvalidArgumentException');
+		$this->item->categoryid= $invalid;
+		
 		$invalid = -500;
 		$this->expectException('InvalidArgumentException');
 		$this->item->categoryid= $invalid;
@@ -42,6 +50,10 @@ class CategoryTest extends TestCase
 		$invalid = 500;
 		$this->expectException('InvalidArgumentException');
 		$this->item->categoryid= $invalid;
+		
+		$invalid = null;
+		$this->expectException('InvalidArgumentException');
+		$this->item->categoryid = $invalid;
 	}
 	
 	public function testValidCategoryName() 
@@ -53,6 +65,14 @@ class CategoryTest extends TestCase
 	
 	public function testInvalidCategoryName() 
 	{
+		$invalid = 0;
+		$this->expectException('InvalidArgumentException');
+		$this->item->categoryname = $invalid;
+		
+		$invalid = null;
+		$this->expectException('InvalidArgumentException');
+		$this->item->categoryname = $invalid;
+		
 		$invalid = 'Chairs';
 		$this->expectException('InvalidArgumentException');
 		$this->item->categoryname = $invalid;
@@ -67,6 +87,14 @@ class CategoryTest extends TestCase
 	
 	public function testInvalidDirName()
 	{
+		$invalid = 0;
+		$this->expectException('InvalidArgumentException');
+		$this->item->directoryname = $invalid;
+		
+		$invalid = null;
+		$this->expectException('InvalidArgumentException');
+		$this->item->directoryname = $invalid;
+		
 		$invalid = 'tables';
 		$this->expectException('InvalidArgumentException');
 		$this->item->directoryname = $invalid;;

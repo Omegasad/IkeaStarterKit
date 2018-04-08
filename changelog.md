@@ -11,6 +11,8 @@ Team conventions: Allman notation, markdown for changelog
 ---Version 2.1--- Release Date: Apr 08, 2018
 - Added admin modify category(name) feature (Johnny Lee)
 - Updated create and modifyset controllers and views to display category names dynamically (Johnny Lee)
+- Added even more test cases (Tony So)
+- Added roles permissions to create and modify set (Mike Zhou)
 
 ---Version 2.0.1--- Release Date: Apr 07, 2018
 - Added travis CI build intergration and added more test cases (Tony So)
@@ -22,6 +24,7 @@ Team conventions: Allman notation, markdown for changelog
 - Added more entity and test cases (Tony So)
 
 ---Version 1.9--- Release Date: Mar 27, 2018
+- Added magic getter and moved __construct to a new method (Tony So)
 - Added basic user roles (Mike Zhou)
 
 ---Version 1.8--- Release Date: Mar 27 2018
