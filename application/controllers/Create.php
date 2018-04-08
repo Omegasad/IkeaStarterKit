@@ -15,6 +15,7 @@ class Create extends Application {
     
     public function index()
     {
+            $this->has_permissions_or_exit(ROLE_USER);
 
             $this->data['pagebody'] = 'create';
             $this->data['chooseset'] = $this->sets->all();
@@ -37,6 +38,8 @@ class Create extends Application {
     
     public function createset()
     {
+        $this->has_permissions_or_exit(ROLE_USER);
+
         $this->data['pagebody'] = 'setcreated';
         $data = $this->input->post();
         if($data){
@@ -55,6 +58,8 @@ class Create extends Application {
     
     public function selection()
     {
+        $this->has_permissions_or_exit(ROLE_USER);
+
         $this->data['pagebody'] = 'create';
         $data = $this->input->post();
         

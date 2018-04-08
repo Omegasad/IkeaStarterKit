@@ -47,9 +47,17 @@ class Application extends CI_Controller
         return $this->session->userdata('userrole');
     }
 
+	public function has_permissions_or_exit($role)
+	{
+		if (!$this->has_permissions_of($role))
+		{
+			exit("Insufficient permissions.");
+		}
+	}
+
     public function has_permissions_of($role)
     {
-        return in_array($role, $this->roles_permission[get_role()]);
+        return in_array($role, $this->roles_permission[$this->get_role()]);
 	}
 
 	/**
@@ -57,7 +65,16 @@ class Application extends CI_Controller
 	 */
 	function render($template = 'template')
 	{
+		$this->data['usermenu'] = ($this->has_permissions_of(ROLE_USER))
+			? $this->parser->parse('usermenu', $this->data, true)
+			: "";
+		
+		$this->data['adminmenu'] = ($this->has_permissions_of(ROLE_ADMIN))
+			? $this->parser->parse('adminmenu', $this->data, true)
+			: "";
+
 		$this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
+
 		$this->parser->parse('template', $this->data);
 	}
 
