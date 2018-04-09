@@ -93,7 +93,7 @@
         </select>
             
         <input id="submitname" name="submitname" type="hidden" 
-               type="text" value={outputname} />   
+               type="text" value="{outputname}" />   
         <input id="submitid" name="submitid" type="hidden" value={outputsetid} />
         </form>
             
