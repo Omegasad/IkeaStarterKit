@@ -2,11 +2,18 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Allows admin user to change category name
+ */
 class Modifycategory extends Application
 {
     private $isUpdated = false;
+    private $updateFailed = false;
     private $selectedcategory;
     
+    /**
+     * Index page for this controller
+     */
     public function index()
     {
         $this->has_permissions_or_exit(ROLE_ADMIN);
@@ -31,13 +38,20 @@ class Modifycategory extends Application
                     : "";
         }
         
-        $this->data['updatestatus'] =
-            ($this->isUpdated) ? "Category name has been updated!" : "";
-        $this->isUpdated = false;
+        if ($this->updateFailed) {
+            $this->data['updatestatus'] = "Update failed! Invalid data.";
+        } else {
+            $this->data['updatestatus'] =
+                ($this->isUpdated) ? "Category name has been updated!" : "";
+            $this->isUpdated = false;
+        }
        
         $this->render();
     }
     
+    /**
+     * Modify accessory item
+     */
     public function modify()
     {
         $this->has_permissions_or_exit(ROLE_ADMIN);
@@ -53,10 +67,29 @@ class Modifycategory extends Application
             $category->categoryname = $data['submitname'];
             $category->dirname = $this->selectedcategory->dirname;
             
-            // Trigger update
-            $this->categories->update($category);
-            $this->isUpdated = true;
+            // Validate data
+            if ($this->nameIsValid($category->categoryname)) {
+                // Trigger update
+                $this->categories->update($category);
+                $this->isUpdated = true;
+            } else {
+                $this->updateFailed = true;
+            }
         }
         $this->index();
+    }
+    
+    /**
+     * Function to validate item name
+     * @param type $name
+     * @return boolean
+     */
+    private function nameIsValid($name)
+    {
+        if (is_null($name))
+            return false;
+        else if (empty($name))
+            return false;
+        return true;
     }
 }
