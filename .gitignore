@@ -19,3 +19,6 @@ application/logs/*
 /vendor/
 /nbproject/private/
 /nbproject/
+
+/tmp/
+/tests/reports
