@@ -168,6 +168,20 @@ class Memory_Model extends Entity implements DataMapper
 		}
 	}
 
+	// Duplicate this shit for original record
+	function update2($record)
+	{
+		// convert object from associative array, if needed
+		$record = (is_array($record)) ? (object) $record : $record;
+		// update the collection appropriately
+		$key = $record->{$this->_keyfield};
+		if (isset($this->_data2[$key]))
+		{
+			$this->_data2[$key] = $record;
+			$this->store2();
+		}
+	}
+
 	// Delete a record from the DB
 	function delete($key, $key2 = null)
 	{

@@ -1,5 +1,5 @@
-setid,setname,sofaid,tableid,lampid,paintingid,setfullname
-0,set_a,0,4,8,12,Set A
-1,set_b,1,5,9,13,Set B
-2,set_c,2,6,10,14,Set C
-3,set_d,3,7,11,15,Set D
+setid,setname,sofaid,tableid,lampid,paintingid
+0,"Set A",0,4,8,12
+1,"Set B",1,5,9,13
+2,"Set C",2,6,10,14
+3,"Set D",3,7,11,15

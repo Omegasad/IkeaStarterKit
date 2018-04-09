@@ -8,6 +8,57 @@ Team membership:
 
 Team conventions: Allman notation, markdown for changelog
 
+---Version 2.5--- Release Date: Apr 08, 2018
+- Fixed bug where changing role during maintenance tasks breaks (Mike Zhou)
+- Fixed bug where Modify set does not show proper category names after changing selection (Mike Zhou)
+- Fixed bug where Modify set fails from accessing incorrect route (Mike Zhou)
+- Fixed bug where modifying accessory changes csv structure (Mike Zhou)
+- Fixed bug where role permissions were broken in Homepage (Mike Zhou)
+
+---Version 2.4--- Release Date: Apr 08, 2018
+- Added server side validation for modifycategory and modifyaccessory(Johnny Lee)
+- Fixed image display issue for modify accessory when switching categories (Johnny Lee)
+- Fixed issue with missing derived data when updating accessory (Johnny Lee)
+
+---Version 2.3--- Release Date: Apr 08, 2018
+- Added admin modify accessory feature (Johnny Lee)
+- Fixed dynamic category name display for modify set (Johnny Lee)
+
+---Version 2.2.1--- Release Date: Apr 08, 2018
+- Fixed user permissions in Modify Set and Modify Categories (Mike Zhou)
+- Applied minor changes in testing (Tony So)
+- Fixed modify set, removed setfullname (Elisa Chu)
+- Updated controllers and views for homepage and catalog to display category names dynamically (Johnny Lee)
+- Minor styling changes throughout site to improve consistency (Johnny Lee)
+
+---Version 2.2--- Release Date: Apr 08, 2018
+- Added admin modify category(name) feature (Johnny Lee)
+- Updated create and modifyset controllers and views to display category names dynamically (Johnny Lee)
+- Added even more test cases (Tony So)
+- Added roles permissions to create and modify set (Mike Zhou)
+
+---Version 2.1--- Release Date: Apr 08, 2018
+- Added admin modify category(name) feature (Johnny Lee)
+- Updated create and modifyset controllers and views to display category names dynamically (Johnny Lee)
+
+---Version 2.0.1--- Release Date: Apr 07, 2018
+- Added travis CI build intergration and added more test cases (Tony So)
+- Fixed unit tests by renaming case-sensitive files (Mike Zhou)
+
+---Version 2.0--- Release Date: Apr 07, 2018
+- Fixed application context issue due to magic getter in Entity (Johnny Lee)
+- Added navigation links in view template (Johnny Lee)
+- Added more entity and test cases (Tony So)
+- Improved catalog (Elisa Chu)
+
+---Version 1.9--- Release Date: Mar 27, 2018
+- Added magic getter and moved __construct to a new method (Tony So)
+- Added basic user roles (Mike Zhou)
+
+---Version 1.8--- Release Date: Mar 27 2018
+- Added basic testing usage and entity (Tony So)
+- Added set modification, improved set creation (Elisa Chu)
+
 ---Version 1.7--- Release Date: Feb 11 2018
 - Readjusted some values made in the main page (Tony So)
 - Did some cleanup to the files and data representation in views (Tony So)
