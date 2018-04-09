@@ -25,6 +25,11 @@
             document.getElementById("updateitem").submit();
         }
     }
+    
+    function categoryChanged() {
+        document.getElementById("catIsChanged").value = true;
+        document.getElementById("changeSelection").submit();        
+    }
 </script>
 
 <div>
@@ -34,11 +39,11 @@
         </div>
         <div style="margin-top:30px; margin-bottom:30px">
             <form method="post" accept-charset="utf-8" 
-                  action="/Modifyaccessory">
+                  action="/Modifyaccessory" id="changeSelection">
                 
                 <label style="display:block; font-size:18px" for="selectset">Select category: </label>     
                 <select name="selectcategory" style="position:relative"
-                        onChange="this.form.submit()">
+                        onChange="categoryChanged()">
 
                     {choosecategory}
                     <option id={categoryid} value={categoryid} {default}>{categoryname}</option>
@@ -53,6 +58,7 @@
                     <option id={itemid} value={itemid} {default}>{itemname}</option>
                     {/chooseaccessory}
                 </select>
+                <input id="catIsChanged" name="catIsChanged" type="hidden" value="false"/>
             </form>
             <br>
             <form method="post" accept-charset="utf-8" 

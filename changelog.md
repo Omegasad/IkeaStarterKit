@@ -8,6 +8,11 @@ Team membership:
 
 Team conventions: Allman notation, markdown for changelog
 
+---Version 2.4--- Release Date: Apr 08, 2018
+- Added server side validation for modifycategory and modifyaccessory(Johnny Lee)
+- Fixed image display issue for modify accessory when switching categories (Johnny Lee)
+- Fixed issue with missing derived data when updating accessory (Johnny Lee)
+
 ---Version 2.3--- Release Date: Apr 08, 2018
 - Added admin modify accessory feature (Johnny Lee)
 - Fixed dynamic category name display for modify set (Johnny Lee)
