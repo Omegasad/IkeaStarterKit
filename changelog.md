@@ -9,6 +9,7 @@ Team membership:
 Team conventions: Allman notation, markdown for changelog
 
 ---Version 2.5--- Release Date: Apr 08, 2018
+- Fixed bug where changing role during maintenance tasks breaks (Mike Zhou)
 - Fixed bug where Modify set does not show proper category names after changing selection (Mike Zhou)
 - Fixed bug where Modify set fails from accessing incorrect route (Mike Zhou)
 - Fixed bug where modifying accessory changes csv structure (Mike Zhou)
