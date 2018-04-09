@@ -12,7 +12,7 @@ class Catalog extends Application
 	{
 		$this->has_permissions_or_exit(ROLE_GUEST);
 
-	    $this->data['userrole'] = $role;
+	    $this->data['userrole'] = $this->get_role();
 		$this->data['pagebody'] = 'catalog';
 		$this->data['datasets'] = $this->accessories->all();
                 
