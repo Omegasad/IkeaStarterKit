@@ -95,6 +95,25 @@ class CSV_Model extends Memory_Model
 		if (($handle = fopen($this->_origin, "w")) !== FALSE)
 		{
 			fputcsv($handle, $this->_fields);
+			foreach ($this->_data as $key => $record)
+				fputcsv($handle, array_values((array) $record));
+			fclose($handle);
+		}
+		// --------------------
+	}
+
+	/**
+	 * Store the collection state appropriately, depending on persistence choice.
+	 * OVER-RIDE THIS METHOD in persistence choice implementations
+	 */
+	protected function store2()
+	{
+		// rebuild the keys table
+		$this->reindex();
+		//---------------------
+		if (($handle = fopen($this->_origin, "w")) !== FALSE)
+		{
+			fputcsv($handle, $this->_fields);
 			foreach ($this->_data2 as $key => $record)
 				fputcsv($handle, array_values((array) $record));
 			fclose($handle);

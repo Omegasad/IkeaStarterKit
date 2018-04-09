@@ -178,7 +178,7 @@ class Memory_Model extends Entity implements DataMapper
 		if (isset($this->_data2[$key]))
 		{
 			$this->_data2[$key] = $record;
-			$this->store();
+			$this->store2();
 		}
 	}
 
