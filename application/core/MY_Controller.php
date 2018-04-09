@@ -50,9 +50,8 @@ class Application extends CI_Controller
 	public function has_permissions_or_exit($role)
 	{
 		if (!$this->has_permissions_of($role))
-		{
-			exit("Insufficient permissions.");
-		}
+			redirect('/');
+			// exit("Insufficient permissions.");
 	}
 
     public function has_permissions_of($role)

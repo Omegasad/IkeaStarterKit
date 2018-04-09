@@ -10,10 +10,7 @@ class Catalog extends Application
 	 */
 	public function index()
 	{
-	    $role = $this->session->userdata('userrole');
-
-	    if ($role == NULL)
-	    	redirect("./roles/actor/Guest");
+		$this->has_permissions_or_exit(ROLE_GUEST);
 
 	    $this->data['userrole'] = $role;
 		$this->data['pagebody'] = 'catalog';
@@ -31,9 +28,4 @@ class Catalog extends Application
                 
 		$this->render();
 	}
-        
-        public function edititem() {
-            
-            
-        }
 }

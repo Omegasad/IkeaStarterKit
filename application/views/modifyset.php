@@ -38,7 +38,7 @@
         </div>
         <div >
         <form method="post" accept-charset="utf-8" 
-              action="/ModifySet">
+              action="/modifyset">
             
         <label style="display:block; font-size:18px" for="selectset">Select set: </label>     
         <select name="selectset" style="position:relative"

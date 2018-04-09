@@ -35,6 +35,7 @@ class CSV_Model extends Memory_Model
 
 		// start with an empty collection
 		$this->_data = array(); // an array of objects
+		$this->_data2 = array(); // an array of objects
 		$this->fields = array(); // an array of strings
 		// and populate the collection
 		$this->load();
@@ -66,6 +67,13 @@ class CSV_Model extends Memory_Model
 						$record->{$this->_fields[$i]} = $data[$i];
 					$key = $record->{$this->_keyfield};
 					$this->_data[$key] = $record;
+
+					// duplicate this shit for original data
+					$record2 = new stdClass();
+					for ($i = 0; $i < count($this->_fields); $i ++ )
+						$record2->{$this->_fields[$i]} = $data[$i];
+					$key2 = $record2->{$this->_keyfield};
+					$this->_data2[$key2] = $record2;
 				}
 			}
 			fclose($handle);
@@ -88,6 +96,25 @@ class CSV_Model extends Memory_Model
 		{
 			fputcsv($handle, $this->_fields);
 			foreach ($this->_data as $key => $record)
+				fputcsv($handle, array_values((array) $record));
+			fclose($handle);
+		}
+		// --------------------
+	}
+
+	/**
+	 * Store the collection state appropriately, depending on persistence choice.
+	 * OVER-RIDE THIS METHOD in persistence choice implementations
+	 */
+	protected function store2()
+	{
+		// rebuild the keys table
+		$this->reindex();
+		//---------------------
+		if (($handle = fopen($this->_origin, "w")) !== FALSE)
+		{
+			fputcsv($handle, $this->_fields);
+			foreach ($this->_data2 as $key => $record)
 				fputcsv($handle, array_values((array) $record));
 			fclose($handle);
 		}

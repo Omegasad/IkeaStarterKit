@@ -19,6 +19,8 @@ class Homepage extends Application
      */
     public function index()
     {
+        $this->has_permissions_or_exit(ROLE_GUEST);
+
         $id = $this->input->post('selectset');
         $this->data['pagebody'] = 'arranged';
         $this->data['chooseset'] = $this->sets->all();
