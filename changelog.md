@@ -8,6 +8,11 @@ Team membership:
 
 Team conventions: Allman notation, markdown for changelog
 
+---Version 2.5--- Release Date: Apr 08, 2018
+- Fixed bug where Modify set fails from accessing incorrect route (Mike Zhou)
+- Fixed bug where modifying accessory changes csv structure (Mike Zhou)
+- Fixed bug where role permissions were broken in Homepage (Mike Zhou)
+
 ---Version 2.4--- Release Date: Apr 08, 2018
 - Added server side validation for modifycategory and modifyaccessory(Johnny Lee)
 - Fixed image display issue for modify accessory when switching categories (Johnny Lee)

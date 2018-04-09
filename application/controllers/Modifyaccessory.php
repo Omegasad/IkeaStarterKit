@@ -119,6 +119,11 @@ class Modifyaccessory extends Application
                     && $this->heightIsValid($item->itemheight)
                     && $this->weightIsValid($item->itemweight)
                     && $this->priceIsValid($item->itemprice)) {
+
+                // Trigger update
+                $this->accessories->update($item);
+                $this->accessories->update2($item);
+                $this->isUpdated = true;
                 
                 // Update derived data
                 $item->filepath = $this->selecteditem->filepath;
@@ -126,10 +131,6 @@ class Modifyaccessory extends Application
                                     * $item->itemwidth 
                                     * $item->itemheight;
                 $item->itemcategory = $this->selecteditem->itemcategory;
-
-                // Trigger update
-                $this->accessories->update($item);
-                $this->isUpdated = true;
             } else {
                 $this->updateFailed = true;
             }

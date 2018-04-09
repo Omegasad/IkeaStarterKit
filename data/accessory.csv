@@ -1,16 +1,16 @@
 itemid,categoryid,filename,itemname,itemlength,itemwidth,itemheight,itemweight,itemprice
-0,0,sofa1.png,HOLMSUND Corner sofa-bed,151,230,96,127.5,999
-1,0,sofa2.png,STOCKHOLM Sofa,88,211,80,71.3,2199
-2,0,sofa3.png,LANDSKRONA Sofa,158,242,78,97,1498
-3,0,sofa4.png,KNOPPARP Sofa,76,174,69,23.54,149
-4,1,table1.png,LACK Coffee table,118,78,45,18.7,49
-5,1,table2.png,STOCKHOLM Coffee table,180,59,40,20.9,299
-6,1,table3.png,RISSNA Coffee table,160,55,40,17.38,149
-7,1,table4.png,REKARNE Coffee table,160,50,40,12.19,249
-8,2,lamp1.png,VIDJA Floor lamp,20,20,138,3.57,47.99
-9,2,lamp2.png,KLABB Floor lamp,36,36,150,7.13,79
-10,2,lamp3.png,HOVNAS Floor lamp,50,50,146,6.22,119
-11,2,lamp4.png,SVIRVEL Floor lamp with 2 shades,16,16,159,3.53,39.99
+0,0,sofa1.png,"HOLMSUND Corner sofa-bed",151,230,96,127.5,999
+1,0,sofa2.png,"STOCKHOLM Sofa",88,211,80,71.3,2199
+2,0,sofa3.png,"LANDSKRONA Sofa",158,242,78,97,1498
+3,0,sofa4.png,"KNOPPARP Sofa",76,174,69,23.54,149
+4,1,table1.png,"LACK Coffee table",118,78,45,18.7,49
+5,1,table2.png,"STOCKHOLM Coffee table",180,59,40,20.9,299
+6,1,table3.png,"RISSNA Coffee table",160,55,40,17.38,149
+7,1,table4.png,"REKARNE Coffee table",160,50,40,12.19,249
+8,2,lamp1.png,"VIDJA Floor lamp",20,20,138,3.57,47.99
+9,2,lamp2.png,"KLABB Floor lamp",36,36,150,7.13,79
+10,2,lamp3.png,"HOVNAS Floor lamp",50,50,146,6.22,119
+11,2,lamp4.png,"SVIRVEL Floor lamp with 2 shades",16,16,159,3.53,39.99
 12,3,painting1.png,"BJORNAMO Picture, set of 3, animals",0,25,25,1.65,29.99
 13,3,painting2.png,"ARENTORP Picture, Jacques Cartier bridge, Montreal",0,140,100,6.54,49.99
 14,3,painting3.png,"BJORKSTA Picture and frame, woodland way, aluminium-colour",0,200,140,4.08,149
