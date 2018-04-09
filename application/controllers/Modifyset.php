@@ -171,6 +171,13 @@ class ModifySet extends Application
         //check when user has changed something in the set
         //if so, that item is displayed in the view
         if($data) {
+
+            
+            for ($i = 0; $i < 4; $i++) {
+                $key = 'category' . $i;
+                $this->data[$key] = $this->categories->get($i)->categoryname;
+            }
+            
             if($data['selectsofa'] != null) {
                 $this->data['outputsofa'] = $data['selectsofa'];
                 $this->data['sofafile'] = $this->accessories->get($data['selectsofa'])
