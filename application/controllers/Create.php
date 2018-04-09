@@ -26,12 +26,11 @@ class Create extends Application {
                 $key = 'category' . $i;
                 $this->data[$key] = $this->categories->get($i)->categoryname;
             }
-            
+            //Get all accessories from each category
             $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
             $this->data['tables'] = $this->accessories->getCategoryMembers(1);
             $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
             $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
-            //$this->data['outputsofa'] = "sofa";
             
             $this->data['paintingvisible'] = 'hidden';
             $this->data['tablevisible'] = 'hidden';
@@ -41,6 +40,7 @@ class Create extends Application {
         $this->render();
     }
     
+    //stores the new set to the database
     public function createset()
     {
         $this->has_permissions_or_exit(ROLE_USER);
@@ -60,6 +60,7 @@ class Create extends Application {
         $this->render();
     }
     
+    //applies the user's applied additions, then reloads page
     public function selection()
     {
         $this->has_permissions_or_exit(ROLE_USER);
@@ -81,6 +82,8 @@ class Create extends Application {
         $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
         $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
         
+        //check when user has added something in the set
+        //if so, that item is displayed in the view
         if($data) {
             if($data['selectsofa'] != null) {
                 $this->data['outputsofa'] = $data['selectsofa'];

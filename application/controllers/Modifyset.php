@@ -43,11 +43,13 @@ class ModifySet extends Application
                 $this->data[$key] = $this->categories->get($i)->categoryname;
             }
             
+            //Get all accessories from each category
             $this->data['sofas'] = $this->accessories->getCategoryMembers(0);
             $this->data['tables'] = $this->accessories->getCategoryMembers(1);
             $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
             $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
             
+            //set the ids on the view given the setid
             $this->data['outputsofa'] = $setmetadata->sofaid;
             $this->data['outputtable'] = $setmetadata->tableid;
             $this->data['outputlamp'] = $setmetadata->lampid;
@@ -80,6 +82,7 @@ class ModifySet extends Application
                 $this->data['selectedid'] = $id;
                 
         
+        //Get the selection (setid, sofa, table, lamp, painting) the user is currently on
         for ($i = 0; $i < sizeof($this->data['chooseset']); ++$i)
         {
             $this->data['chooseset'][$i]->default =
@@ -88,6 +91,7 @@ class ModifySet extends Application
                     : "";
         }
         
+
         for ($i = 0; $i < sizeof($this->data['sofas']); ++$i)
         {
             $this->data['sofas'][$i]->default =
@@ -126,7 +130,8 @@ class ModifySet extends Application
         $this->render();
     }
     
-        public function modify()
+    //stores the modified set to the database
+    public function modify()
     {
         $this->has_permissions_or_exit(ROLE_USER);
 
@@ -145,6 +150,7 @@ class ModifySet extends Application
         $this->render();
     }
     
+    //applies the user's selected changes then reloads page
     public function selection()
     {
         $this->has_permissions_or_exit(ROLE_USER);
@@ -162,6 +168,8 @@ class ModifySet extends Application
             $this->data['lamps'] = $this->accessories->getCategoryMembers(2);
             $this->data['paintings'] = $this->accessories->getCategoryMembers(3);
         
+        //check when user has changed something in the set
+        //if so, that item is displayed in the view
         if($data) {
             if($data['selectsofa'] != null) {
                 $this->data['outputsofa'] = $data['selectsofa'];
@@ -169,6 +177,7 @@ class ModifySet extends Application
                     ->filepath;
                 $this->data['sofavisible'] = '';
                 
+                //save selection
                 for ($i = 0; $i < sizeof($this->data['sofas']); ++$i)
                 {
                     $this->data['sofas'][$i]->default =
